@@ -100,6 +100,8 @@ p {
 .attribution {
   position: fixed;
   bottom: 16px;
+  margin-inline: 16px;
+  text-align: center;
 }
 
 .attribution a {
