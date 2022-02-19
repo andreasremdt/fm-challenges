@@ -12,8 +12,8 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Links
 
-- [Solution URL](https://github.com/andreasremdt/fm-portfolio/tree/main/qr-code-component/)
-- [Live Site URL](https://fm-portfolio.netlify.app/qr-code-component/)
+- [Solution URL](https://github.com/andreasremdt/fm-challenges/tree/main/qr-code-component/)
+- [Live Site URL](https://fm-challenges-ar.netlify.app/qr-code-component/)
 
 ### Built with
 
