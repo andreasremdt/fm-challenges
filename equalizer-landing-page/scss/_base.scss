@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: unset;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  font-family: $ff-sans;
+  line-height: 26px;
+  color: $color-black;
+  background-color: $color-gray;
+  background-repeat: no-repeat;
+  background-position: right -200px top -260px;
+  background-image: url(../assets/images/bg-main-mobile.png);
+
+  @media (min-width: $bp-mobile) {
+    background-position: top -35px right -35px, center top -260px;
+    background-image: url(../assets/images/bg-pattern-1.svg), url(../assets/images/bg-main-tablet.png);
+    background-size: min(32%, 312px) auto, auto;
+  }
+
+  @media (min-width: $bp-tablet) {
+    background-position: top -35px right 0, center top -260px;
+    background-image: url(../assets/images/bg-pattern-1.svg), url(../assets/images/bg-main-desktop.png);
+  }
+}
+
+h1 {
+  letter-spacing: -1px;
+  font-size: clamp($fs-h2, 6vw + 1rem, $fs-h1);
+  line-height: clamp(48px, 6vw + 1rem, $lh-h1);
+}
+
+h2 {
+  font-size: clamp(32px, 3vw + 1rem, $fs-h2);
+  line-height: $lh-h2;
+  margin: unset;
+}
+
+a {
+  text-decoration: none;
+}

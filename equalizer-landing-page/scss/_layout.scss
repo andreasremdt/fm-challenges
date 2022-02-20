@@ -1,0 +1,78 @@
+.main-header {
+  margin-block: 2.5rem 4rem;
+
+  @media (min-width: $bp-mobile) {
+    margin-block: 3.5rem 5rem;
+  }
+
+  @media (min-width: $bp-tablet) {
+    margin-block: 3.5rem 6rem;
+  }
+}
+
+.main-footer {
+  margin: 1.5rem 0 4rem;
+  display: grid;
+
+  @media (min-width: $bp-mobile) {
+    margin-top: 14rem;
+    gap: 0 130px;
+    grid-template-columns: 1fr auto;
+  }
+
+  @media (min-width: $bp-tablet) {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .text {
+    @media (min-width: $bp-mobile) and (max-width: $bp-tablet) {
+      grid-column: 1 / 2;
+    }
+  }
+
+  .logo {
+    margin-bottom: 2rem;
+  }
+
+  p {
+    margin: unset;
+
+    a {
+      color: inherit;
+      font-weight: bold;
+
+      &:hover,
+      &:focus {
+        color: $color-red;
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    padding-left: unset;
+    margin: 4rem 0 0;
+
+    @media (min-width: $bp-mobile) {
+      grid-column: 2 / 3;
+      justify-self: end;
+      align-self: center;
+      margin: unset;
+    }
+
+    @media (min-width: $bp-tablet) {
+      grid-column: 3 / 4;
+    }
+
+    a {
+      color: inherit;
+
+      &:hover,
+      &:focus {
+        color: $color-red;
+      }
+    }
+  }
+}

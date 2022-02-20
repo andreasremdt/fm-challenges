@@ -1,0 +1,24 @@
+// COLORS
+$color-cyan: hsl(177 68% 64%);
+$color-red: hsl(12 94% 65%);
+$color-yellow: hsl(33 100% 70%);
+$color-gray: hsl(20 33% 98%);
+$color-black: hsl(244 23% 12%);
+
+// TYPOGRAPHY
+$ff-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+  "Helvetica Neue", sans-serif;
+
+$fs-h1: 88px;
+$fs-h2: 40px;
+$fs-body1: 20px;
+$fs-body2: 16px;
+
+$lh-h1: 88px;
+$lh-h2: 52px;
+$lh-body1: 34px;
+$lh-body2: 26px;
+
+// BREAKPOINTS
+$bp-mobile: 650px;
+$bp-tablet: 968px;

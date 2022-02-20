@@ -1,0 +1,136 @@
+.logo {
+  background: transparent url(../assets/images/logo.svg) no-repeat center;
+  text-indent: -9999px;
+  display: inline-block;
+  width: 147px;
+  height: 33px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem 1rem;
+  border: unset;
+  font-family: inherit;
+  font-weight: bolder;
+  font-size: 18px;
+  border-radius: 12px;
+
+  &.is-primary {
+    background-color: $color-black;
+    color: $color-gray;
+
+    &:hover,
+    &:focus {
+      background-color: $color-cyan;
+    }
+  }
+
+  &.is-secondary {
+    background-color: $color-gray;
+    color: $color-black;
+
+    &:hover,
+    &:focus {
+      background-color: $color-yellow;
+    }
+  }
+
+  svg {
+    margin-right: 0.5rem;
+  }
+}
+
+.main-info {
+  background: $color-black url(../assets/images/bg-pattern-2.svg) no-repeat center top;
+  background-size: 82%;
+  color: $color-gray;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 13rem;
+  position: relative;
+
+  @media (max-width: $bp-mobile) {
+    margin-inline: -24px;
+  }
+
+  @media (min-width: $bp-mobile) {
+    height: 600px;
+    margin-top: 15rem;
+    background-size: 45%;
+  }
+
+  @media (min-width: $bp-tablet) {
+    margin-top: 20rem;
+    background-size: 25%;
+    background-position-x: 40%;
+  }
+
+  .inner {
+    background-color: $color-red;
+    border-radius: 12px;
+    padding: 48px 36px;
+    z-index: 2;
+
+    p {
+      line-height: 28px;
+      font-size: 18px;
+
+      @media (min-width: $bp-tablet) {
+        line-height: 34px;
+        font-size: 20px;
+      }
+    }
+
+    @media (min-width: $bp-mobile) {
+      max-width: 400px;
+      position: absolute;
+      right: 56px;
+      top: 150px;
+      padding: 48px;
+    }
+
+    @media (min-width: $bp-tablet) {
+      max-width: 450px;
+      padding: 54px;
+      top: 138px;
+      right: 95px;
+    }
+  }
+
+  .screenshot {
+    margin: -8rem auto 4rem auto;
+    z-index: 1;
+    max-width: 100%;
+    height: auto;
+
+    @media (min-width: $bp-mobile) {
+      position: absolute;
+      left: 64px;
+      top: -138px;
+      margin: unset;
+    }
+
+    @media (min-width: $bp-tablet) {
+      left: 102px;
+      top: -213px;
+    }
+  }
+
+  .button:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    margin-block: 3rem;
+
+    strong {
+      font-size: 65px;
+      margin-right: 1rem;
+    }
+  }
+}
