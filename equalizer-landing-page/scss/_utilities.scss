@@ -1,26 +1,25 @@
 .container {
-  max-width: 1110px;
+  max-width: 69.375rem;
   margin-inline: auto;
-  padding-inline: 24px;
+  padding-inline: var(--gap, 1.5em);
   box-sizing: content-box;
 
   @media (min-width: $bp-mobile) {
-    padding-inline: 39px;
+    --gap: 2.5em;
   }
 }
 
 .lead {
-  font-size: $fs-body2;
-  line-height: $lh-body2;
+  font-size: var(--font-size, 1rem);
+  line-height: var(--line-height, 1.6);
 
-  @media (min-width: $bp-mobile) {
-    font-size: 18px;
-    line-height: 28px;
+  @media (min-width: $bp-mobile) and (max-width: $bp-tablet) {
+    --font-size: 1.125rem;
   }
 
   @media (min-width: $bp-tablet) {
-    font-size: $fs-body1;
-    line-height: $lh-body1;
+    --font-size: 1.25rem;
+    --line-height: 1.7;
   }
 }
 

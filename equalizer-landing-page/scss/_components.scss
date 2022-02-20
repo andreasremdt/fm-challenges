@@ -10,12 +10,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.1rem 1rem;
+  padding: 0.9em;
   border: unset;
   font-family: inherit;
   font-weight: bolder;
   font-size: 18px;
-  border-radius: 12px;
+  border-radius: 0.667em;
 
   &.is-primary {
     background-color: $color-black;
@@ -38,7 +38,7 @@
   }
 
   svg {
-    margin-right: 0.5rem;
+    margin-right: 0.5em;
   }
 }
 
@@ -46,18 +46,18 @@
   background: $color-black url(../assets/images/bg-pattern-2.svg) no-repeat center top;
   background-size: 82%;
   color: $color-gray;
-  border-radius: 12px;
+  border-radius: 0.75em;
   display: flex;
   flex-direction: column-reverse;
   margin-top: 13rem;
   position: relative;
 
   @media (max-width: $bp-mobile) {
-    margin-inline: -24px;
+    margin-inline: -1.5rem;
   }
 
   @media (min-width: $bp-mobile) {
-    height: 600px;
+    height: 37.5rem;
     margin-top: 15rem;
     background-size: 45%;
   }
@@ -70,33 +70,41 @@
 
   .inner {
     background-color: $color-red;
-    border-radius: 12px;
-    padding: 48px 36px;
+    border-radius: 0.75em;
+    padding: 3rem 2.25rem;
     z-index: 2;
+    font-size: 18px;
 
-    p {
-      line-height: 28px;
-      font-size: 18px;
+    @media (min-width: $bp-mobile) {
+      max-width: 25rem;
+      position: absolute;
+      right: 3.5rem;
+      top: 9.375rem;
+      padding: 3rem;
+    }
 
-      @media (min-width: $bp-tablet) {
-        line-height: 34px;
+    @media (min-width: $bp-tablet) {
+      max-width: 28.125rem;
+      padding: 3.375rem;
+      top: 8.625rem;
+      right: 5.938rem;
+
+      p {
+        line-height: 1.7;
         font-size: 20px;
       }
     }
 
-    @media (min-width: $bp-mobile) {
-      max-width: 400px;
-      position: absolute;
-      right: 56px;
-      top: 150px;
-      padding: 48px;
-    }
+    .price {
+      display: flex;
+      align-items: center;
+      margin-block: 2.5rem;
+      line-height: 1;
 
-    @media (min-width: $bp-tablet) {
-      max-width: 450px;
-      padding: 54px;
-      top: 138px;
-      right: 95px;
+      strong {
+        font-size: 65px;
+        margin-right: 1rem;
+      }
     }
   }
 
@@ -108,29 +116,18 @@
 
     @media (min-width: $bp-mobile) {
       position: absolute;
-      left: 64px;
-      top: -138px;
+      left: 4rem;
+      top: -8.625rem;
       margin: unset;
     }
 
     @media (min-width: $bp-tablet) {
-      left: 102px;
-      top: -213px;
+      left: 6.375rem;
+      top: -13.313rem;
     }
   }
 
   .button:not(:last-child) {
     margin-bottom: 1rem;
-  }
-
-  .price {
-    display: flex;
-    align-items: center;
-    margin-block: 3rem;
-
-    strong {
-      font-size: 65px;
-      margin-right: 1rem;
-    }
   }
 }

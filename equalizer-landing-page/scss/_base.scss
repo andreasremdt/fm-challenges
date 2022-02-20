@@ -9,7 +9,7 @@ body {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   font-family: $ff-sans;
-  line-height: 26px;
+  line-height: 1.6;
   color: $color-black;
   background-color: $color-gray;
   background-repeat: no-repeat;
@@ -30,16 +30,20 @@ body {
 
 h1 {
   letter-spacing: -1px;
-  font-size: clamp($fs-h2, 6vw + 1rem, $fs-h1);
-  line-height: clamp(48px, 6vw + 1rem, $lh-h1);
+  font-size: clamp(40px, 6vw + 1rem, 88px);
+  line-height: 1;
 }
 
 h2 {
-  font-size: clamp(32px, 3vw + 1rem, $fs-h2);
-  line-height: $lh-h2;
+  font-size: clamp(32px, 3vw + 1rem, 40px);
+  line-height: 1;
   margin: unset;
 }
 
 a {
   text-decoration: none;
+}
+
+a:focus {
+  outline: none;
 }
