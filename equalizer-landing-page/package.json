@@ -1,14 +1,9 @@
 {
   "name": "equalizer-landing-page",
-  "version": "1.0.0",
-  "description": "![Design preview for the Equalizer landing page coding challenge](./preview.jpg)",
-  "main": "index.html",
   "scripts": {
-    "sass:build": "sass ./scss/index.scss ./dist/styles.css --style=compressed",
-    "sass:dev": "sass ./scss/index.scss ./dist/styles.css --watch"
+    "build": "sass ./scss/index.scss ./dist/styles.css --style=compressed",
+    "dev": "sass ./scss/index.scss ./dist/styles.css --watch"
   },
-  "author": "Andreas Remdt",
-  "license": "MIT",
   "devDependencies": {
     "sass": "^1.49.8"
   }

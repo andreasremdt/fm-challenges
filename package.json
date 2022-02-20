@@ -1,0 +1,23 @@
+{
+  "name": "fm-challenges",
+  "version": "1.0.0",
+  "description": "This repository hosts my submitted solutions for [Frontend Mentor](https://www.frontendmentor.io) challenges. Feel free to browse around and leave feedback.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build --workspaces"
+  },
+  "workspaces": [
+    "equalizer-landing-page"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreasremdt/fm-challenges.git"
+  },
+  "keywords": [],
+  "author": "Andreas Remdt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreasremdt/fm-challenges/issues"
+  },
+  "homepage": "https://github.com/andreasremdt/fm-challenges#readme"
+}
