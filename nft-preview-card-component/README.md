@@ -10,12 +10,12 @@ This is a solution to the [NFT preview card component challenge on Frontend Ment
 - [Built with](#built-with)
 - [Author](#author)
 
-### Links
+## Links
 
 - [Solution URL](https://github.com/andreasremdt/fm-challenges/tree/main/nft-preview-card-component/)
 - [Live Site URL](https://fm-challenges-ar.netlify.app/nft-preview-card-component/)
 
-### Built with
+## Built with
 
 - Semantic HTML5 markup
 - CSS custom properties

@@ -10,12 +10,12 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 - [Built with](#built-with)
 - [Author](#author)
 
-### Links
+## Links
 
 - [Solution URL](https://github.com/andreasremdt/fm-challenges/tree/main/qr-code-component/)
 - [Live Site URL](https://fm-challenges-ar.netlify.app/qr-code-component/)
 
-### Built with
+## Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
