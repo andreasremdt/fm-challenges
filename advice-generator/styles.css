@@ -58,6 +58,19 @@ body {
   place-items: center;
 }
 
+main {
+  --spacing: 3rem;
+  max-width: 33.75rem;
+  width: calc(100% - 2rem);
+  padding: var(--spacing);
+  margin: 1rem;
+  background-color: hsl(var(--color-card-background));
+  box-shadow: 1.875rem 3.125rem 5rem hsla(0, 0%, 0%, 0.1);
+  border-radius: 0.9375rem;
+  text-align: center;
+  position: relative;
+}
+
 h1 {
   margin: 0 0 1.5rem 0;
   text-transform: uppercase;
@@ -68,6 +81,12 @@ h1 {
 
 h1 span {
   display: inline-block;
+}
+
+.quote-container {
+  overflow-x: hidden;
+  margin-inline: calc(var(--spacing) * -1);
+  padding-inline: var(--spacing);
 }
 
 blockquote {
@@ -87,18 +106,6 @@ blockquote:not(.has-error)::after {
   content: "”";
 }
 
-main {
-  max-width: 33.75rem;
-  width: calc(100% - 2rem);
-  padding: 3rem;
-  margin: 1rem;
-  background-color: hsl(var(--color-card-background));
-  box-shadow: 1.875rem 3.125rem 5rem hsla(0, 0%, 0%, 0.1);
-  border-radius: 0.9375rem;
-  text-align: center;
-  position: relative;
-}
-
 hr {
   border: unset;
   height: 16px;
@@ -108,7 +115,8 @@ hr {
 
 @media (max-width: 31.25em) {
   main {
-    padding: 1.5rem 1.5rem 3rem 1.5rem;
+    --spacing: 1.5rem;
+    padding-block-end: 3rem;
   }
 
   blockquote:not(.has-error) {
@@ -139,7 +147,7 @@ button:hover {
   animation: pulse 2s linear infinite;
 }
 
-button:focus {
+button:focus-visible {
   outline: 2px solid hsl(var(--color-text));
   transition: box-shadow 0.2s ease-in-out;
   box-shadow: 0px 0px 2.5rem hsl(var(--color-accent));
