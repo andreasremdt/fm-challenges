@@ -1,0 +1,246 @@
+/* --------------------------------------------- */
+/* VARIABLES                                     */
+/* --------------------------------------------- */
+
+:root {
+  --color-text: 193 38% 86%;
+  --color-accent: 150 100% 66%;
+  --color-body-background: 219 22% 16%;
+  --color-card-background: 217 19% 24%;
+}
+
+/* --------------------------------------------- */
+/* FONTS                                         */
+/* --------------------------------------------- */
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(./fonts/manrope-extrabold.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* --------------------------------------------- */
+/* BASE STYLES                                   */
+/* --------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: unset;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  min-height: 100vh;
+  background-color: hsl(var(--color-body-background));
+  color: hsl(var(--color-text));
+  font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  font-weight: bolder;
+  display: grid;
+  place-items: center;
+}
+
+h1 {
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 4px;
+  color: hsl(var(--color-accent));
+}
+
+h1 span {
+  display: inline-block;
+}
+
+blockquote {
+  margin: unset;
+}
+
+blockquote:not(.has-error) {
+  font-size: 1.75rem;
+  letter-spacing: -0.3px;
+}
+
+blockquote:not(.has-error)::before {
+  content: "“";
+}
+
+blockquote:not(.has-error)::after {
+  content: "”";
+}
+
+main {
+  max-width: 33.75rem;
+  width: calc(100% - 2rem);
+  padding: 3rem;
+  margin: 1rem;
+  background-color: hsl(var(--color-card-background));
+  box-shadow: 1.875rem 3.125rem 5rem hsla(0, 0%, 0%, 0.1);
+  border-radius: 0.9375rem;
+  text-align: center;
+  position: relative;
+}
+
+hr {
+  border: unset;
+  height: 16px;
+  background: transparent url(./images/pattern-divider-desktop.svg) no-repeat center;
+  margin-block: 2rem 1.5rem;
+}
+
+@media (max-width: 31.25em) {
+  main {
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
+  }
+
+  blockquote:not(.has-error) {
+    font-size: 1.5rem;
+  }
+
+  hr {
+    background-image: url(./images/pattern-divider-mobile.svg);
+  }
+}
+
+button {
+  background-color: hsl(var(--color-accent));
+  width: 4rem;
+  aspect-ratio: 1;
+  padding: unset;
+  margin: unset;
+  border: unset;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+button:hover {
+  animation: pulse 2s linear infinite;
+}
+
+button:focus {
+  outline: 2px solid hsl(var(--color-text));
+  transition: box-shadow 0.2s ease-in-out;
+  box-shadow: 0px 0px 2.5rem hsl(var(--color-accent));
+}
+
+/* --------------------------------------------- */
+/* ANIMATIONS                                    */
+/* --------------------------------------------- */
+
+.slide-out-x {
+  animation: slide-out-x 0.6s ease-in-out forwards;
+}
+
+.slide-in-x {
+  animation: slide-in-x 0.6s ease-in-out;
+}
+
+.slide-out-y {
+  animation: slide-out-y 0.4s ease-in-out forwards;
+}
+
+.slide-in-y {
+  animation: slide-in-y 0.4s ease-in-out;
+}
+
+.spin svg {
+  animation: spin 0.6s ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 0px hsl(var(--color-accent));
+  }
+
+  50% {
+    box-shadow: 0px 0px 2.5rem hsl(var(--color-accent));
+  }
+
+  100% {
+    box-shadow: 0px 0px 0px hsl(var(--color-accent));
+  }
+}
+
+@keyframes slide-out-x {
+  40% {
+    opacity: 1;
+    transform: scale(0.7);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.7) translate(70%);
+  }
+}
+
+@keyframes slide-in-x {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translate(-70%);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(0.7) translate(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-out-y {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+}
+
+@keyframes slide-in-y {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
