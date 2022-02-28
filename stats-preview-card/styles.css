@@ -1,0 +1,188 @@
+/* --------------------------------------------- */
+/* VARIABLES                                     */
+/* --------------------------------------------- */
+
+:root {
+  --color-body-background: 233 47% 7%;
+  --color-card-background: 244 38% 16%;
+  --color-accent: 277 64% 61%;
+  --color-white: 0 0% 100%;
+
+  --font-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  --font-primary: Inter, var(--font-fallback);
+  --font-secondary: "Lexend Deca", var(--font-fallback);
+}
+
+/* --------------------------------------------- */
+/* FONTS                                         */
+/* --------------------------------------------- */
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./fonts/inter-regular.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(./fonts/inter-bold.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Lexend Deca";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./fonts/lexend-deca-regular.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* --------------------------------------------- */
+/* BASE STYLES                                   */
+/* --------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: unset;
+
+  background-color: hsl(var(--color-body-background));
+  color: hsl(var(--color-white) / 0.75);
+
+  font-family: var(--font-primary);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1.6rem;
+
+  background-color: hsl(var(--color-card-background));
+
+  text-align: center;
+
+  box-shadow: 0px 1.3333rem 1.3333rem -0.66667rem hsla(233, 28%, 13%, 0.2);
+  border-radius: 0.53333rem;
+}
+
+main > div {
+  padding: 2.1333rem;
+}
+
+figure {
+  margin: unset;
+
+  background-color: hsl(var(--color-accent));
+
+  border-radius: 0.53333rem 0.53333rem 0 0;
+
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+
+  opacity: 0.75;
+  mix-blend-mode: multiply;
+  vertical-align: middle;
+}
+
+h1 {
+  margin-top: 0.66667em;
+
+  color: hsl(var(--color-white));
+
+  font-size: 1.8667rem;
+  line-height: 1.2;
+}
+
+h1 > span {
+  color: hsl(var(--color-accent));
+}
+
+.stats p {
+  margin-bottom: unset;
+}
+
+.stats b {
+  color: hsl(var(--color-white));
+
+  font-size: 1.5rem;
+}
+
+.stats span {
+  display: block;
+
+  color: hsl(var(--color-white) / 0.6);
+
+  text-transform: uppercase;
+  font-family: var(--font-secondary);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 40em) {
+  main {
+    max-width: 1110px;
+    width: calc(100% - 1.6rem);
+    flex-direction: row;
+
+    text-align: left;
+  }
+
+  main > div {
+    max-width: 570px;
+
+    padding: clamp(2.1333rem, 5vw + 1rem, 4.5rem);
+  }
+
+  h1 {
+    margin-top: unset;
+
+    font-size: 2.25rem;
+  }
+
+  .text {
+    max-width: 85%;
+  }
+
+  .stats {
+    display: flex;
+    gap: 0 clamp(2.1333rem, 5vw + 1rem, 3.6rem);
+    margin-top: 3.5rem;
+  }
+
+  figure {
+    border-radius: 0 0.53333rem 0.53333rem 0;
+    max-width: 540px;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
