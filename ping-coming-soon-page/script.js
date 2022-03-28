@@ -17,7 +17,7 @@ function showError(input) {
     error.setAttribute("aria-describedby", input.id);
 
     input.classList.add("has-error");
-    input.setAttribute("aria-invalid", "true");
+    input.setAttribute("aria-invalid", "");
     input.parentNode.append(error);
   }
 }

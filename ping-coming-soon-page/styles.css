@@ -93,10 +93,10 @@ img {
 }
 
 main {
-  max-width: 640px;
+  max-width: 40rem;
   margin-inline: auto;
-  margin-block: 80px;
-  padding-inline: 28px;
+  margin-block: 5.5rem;
+  padding-inline: 1.75rem;
 }
 
 h1 {
@@ -118,12 +118,18 @@ p {
   margin: unset;
 }
 
+@media (min-width: 37.5rem) {
+  h1 {
+    margin-block: 2.5rem 1.1rem;
+  }
+}
+
 /* --------------------------------------------- */
 /* FORM                                          */
 /* --------------------------------------------- */
 
 .logo {
-  max-width: 56px;
+  max-width: 3.5rem;
 }
 
 form {
@@ -140,9 +146,9 @@ form > div {
 }
 
 input {
-  height: 40px;
+  height: 2.5rem;
   width: 100%;
-  border-radius: 28px;
+  border-radius: 1.75rem;
   border: 1px solid hsl(var(--color-blue-100));
   font-family: inherit;
   font-size: 12px;
@@ -175,8 +181,8 @@ input.has-error {
 }
 
 button {
-  height: 40px;
-  border-radius: 28px;
+  height: 2.5rem;
+  border-radius: 1.75rem;
   border: none;
   font-family: inherit;
   font-size: 12px;
@@ -195,7 +201,7 @@ button:focus-visible {
   outline: none;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 37.5rem) {
   .logo {
     max-width: 100%;
   }
@@ -215,7 +221,7 @@ button:focus-visible {
 
   button,
   input {
-    height: 56px;
+    height: 3.5rem;
     font-size: 16px;
   }
 
@@ -238,9 +244,9 @@ footer ul {
 
 footer ul a {
   display: flex;
-  width: 32px;
-  height: 32px;
-  border-radius: 16px;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
   border: 1px solid hsla(var(--color-blue-300) / 0.15);
   align-items: center;
   justify-content: center;
