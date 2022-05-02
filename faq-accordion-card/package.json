@@ -1,0 +1,10 @@
+{
+  "name": "faq-accordion-card",
+  "scripts": {
+    "build": "sass ./scss/main.scss ./dist/styles.css --style=compressed",
+    "dev": "sass ./scss/main.scss ./dist/styles.css --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.49.8"
+  }
+}

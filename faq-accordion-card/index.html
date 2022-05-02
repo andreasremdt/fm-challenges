@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Andreas Remdt" />
+    <meta name="description" content="This is a solution to the FAQ accordion card challenge on Frontend Mentor" />
+
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./dist/styles.css" />
+  </head>
+  <body>
+    <main class="faq-card">
+      <figure class="main-logo">
+        <div class="wrapper">
+          <img
+            srcset="
+              ./images/illustration-woman-online-mobile.svg  237w,
+              ./images/illustration-woman-online-desktop.svg 472w
+            "
+            sizes="(max-width: 45rem) 237px, 472px"
+            src="./images/illustration-woman-online-desktop.svg"
+            alt=""
+            width="472"
+            height="359"
+            class="image"
+          />
+        </div>
+      </figure>
+
+      <div class="content">
+        <h1 class="title">FAQ</h1>
+
+        <details class="faq-entry">
+          <summary class="question">How many team members can I invite?</summary>
+
+          You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium
+          plan.
+        </details>
+        <details class="faq-entry">
+          <summary class="question">What is the maximum file upload size?</summary>
+
+          No more than 2GB. All files in your account must fit your allotted storage space.
+        </details>
+        <details class="faq-entry">
+          <summary class="question">How do I reset my password?</summary>
+
+          Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be
+          emailed to you.
+        </details>
+        <details class="faq-entry">
+          <summary class="question">Can I cancel my subscription?</summary>
+
+          Yes! Send us a message and we'll process your request no questions asked.
+        </details>
+        <details class="faq-entry">
+          <summary class="question">Do you provide additional support?</summary>
+
+          Chat and email support is available 24/7. Phone lines are open during normal business hours.
+        </details>
+      </div>
+    </main>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>

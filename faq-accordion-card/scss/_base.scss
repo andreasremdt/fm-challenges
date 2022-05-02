@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "vars/colors";
+@use "vars/typography";
+
+body {
+  font: normal #{map.get(typography.$sizes, "body")}/ 1.6 typography.$family;
+  color: colors.$text;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, colors.$gradient-start, colors.$gradient-end);
+}
+
+h1 {
+  font-size: map.get(typography.$sizes, "h1");
+  color: colors.$h1;
+  line-height: 1.1;
+}
+
+summary {
+  font-size: map.get(typography.$sizes, "title");
+  color: colors.$title;
+  list-style: none;
+}

@@ -1,0 +1,45 @@
+@use "vars/colors";
+
+.faq-entry {
+  --height: auto;
+  border-bottom: 1px solid colors.$divider;
+  padding-block: 1rem;
+  overflow: hidden;
+  transition: height 0.25s ease-out;
+  height: var(--height);
+
+  > .question {
+    cursor: pointer;
+    position: relative;
+    transition: color 0.1s linear;
+
+    &:hover,
+    &:focus-visible {
+      color: colors.$accent;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 100%;
+      right: 0;
+      top: 0;
+      background: url(../images/icon-arrow-down.svg) no-repeat center;
+      transition: transform 0.25s linear;
+    }
+  }
+
+  &[open] {
+    height: var(--height);
+
+    > .question {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

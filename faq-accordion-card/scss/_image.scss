@@ -1,0 +1,43 @@
+@use "vars/breakpoints";
+
+.main-logo {
+  display: flex;
+  position: relative;
+
+  @media (min-width: breakpoints.$default) {
+    align-items: center;
+    background: url(../images/bg-pattern-desktop.svg) no-repeat -600px -300px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: url(../images/illustration-box-desktop.svg) no-repeat;
+      z-index: 1;
+      inset: 0;
+      left: -42px;
+      background-position: -50px 210px;
+    }
+  }
+
+  @media (max-width: breakpoints.$default) {
+    justify-content: center;
+    background: url(../images/bg-pattern-mobile.svg) no-repeat top center;
+  }
+
+  > .wrapper {
+    @media (min-width: breakpoints.$default) {
+      overflow: hidden;
+    }
+
+    > .image {
+      @media (min-width: breakpoints.$default) {
+        transform: translateX(-64px);
+      }
+
+      @media (max-width: breakpoints.$default) {
+        transform: translateY(-112px);
+        width: 237px;
+      }
+    }
+  }
+}
