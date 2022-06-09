@@ -9,7 +9,8 @@
   "workspaces": [
     "equalizer-landing-page",
     "faq-accordion-card",
-    "expenses-chart-component"
+    "expenses-chart-component",
+    "devjobs-web-app"
   ],
   "repository": {
     "type": "git",
