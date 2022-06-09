@@ -1,9 +1,0 @@
-[build]
-  publish = "dist/"
-  command = "npm run build"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    Content-Security-Policy = "default-src 'self'; style-src 'self'; form-action 'none'; script-src 'self'; connect-src 'none'; img-src 'self'; base-uri 'self'; frame-ancestors 'self'; object-src 'none'; require-trusted-types-for 'script';"

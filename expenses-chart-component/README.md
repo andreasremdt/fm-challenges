@@ -24,7 +24,7 @@ Users should be able to:
 ## Links
 
 - [Solution URL](https://github.com/andreasremdt/fm-challenges/tree/main/expenses-chart-component/)
-- [Live Site URL](https://fm-challenges-ar.netlify.app/expenses-chart-component/)
+- [Live Site URL](https://fm-challenges-ar.netlify.app/expenses-chart-component/dist/)
 
 ## Built with
 
