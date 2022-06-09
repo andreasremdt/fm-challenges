@@ -1,5 +1,5 @@
-function Home() {
-  return <h1>Home page</h1>;
+function StyleGuide() {
+  return <main>sadsad</main>;
 }
 
-export default Home;
+export default StyleGuide;
