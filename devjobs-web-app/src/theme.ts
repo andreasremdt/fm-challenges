@@ -10,6 +10,12 @@ const colors = {
 
 const lightColors = {
   background: "hsla(217, 26%, 97%, 1)",
+  headings: {
+    text: "hsla(219, 29%, 14%, 1)",
+    hover: {
+      text: colors.darkGrey,
+    },
+  },
   element: colors.white,
   inputs: {
     placeholder: "hsla(219, 29%, 14%, 0.5)",
@@ -41,6 +47,12 @@ const lightColors = {
 
 const darkColors = {
   background: "hsla(219, 29%, 10%, 1)",
+  headings: {
+    text: colors.white,
+    hover: {
+      text: colors.darkGrey,
+    },
+  },
   element: "hsla(219, 29%, 14%, 1)",
   inputs: {
     placeholder: "hsla(0, 0%, 100%, 0.5)",

@@ -4,6 +4,12 @@ declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
       background: string;
+      headings: {
+        text: string;
+        hover: {
+          text: string;
+        };
+      };
       element: string;
       violet: string;
       lightViolet: string;
