@@ -1,28 +1,78 @@
 import { DefaultTheme } from "styled-components";
 
+const colors = {
+  violet: "hsla(235, 69%, 61%, 1)",
+  lightViolet: "hsla(235, 82%, 77%, 1)",
+  grey: "hsla(212, 23%, 69%, 1)",
+  darkGrey: "hsla(214, 17%, 51%, 1)",
+  white: "hsla(0, 0%, 100%, 1)",
+};
+
 const lightColors = {
-  background: "#F4F6F8",
-  element: "#FFFFFF",
+  background: "hsla(217, 26%, 97%, 1)",
+  element: colors.white,
+  inputs: {
+    placeholder: "hsla(219, 29%, 14%, 0.5)",
+    text: "hsla(219, 29%, 14%, 1)",
+    border: "hsla(214, 17%, 51%, 0.2)",
+  },
+  checkbox: {
+    background: "hsla(219, 29%, 14%, 0.1)",
+  },
+  buttons: {
+    primary: {
+      background: colors.violet,
+      text: colors.white,
+      hover: {
+        background: colors.lightViolet,
+        text: colors.white,
+      },
+    },
+    secondary: {
+      background: "hsla(235, 69%, 61%, .1)",
+      text: colors.violet,
+      hover: {
+        background: "hsla(235, 69%, 61%, .35)",
+        text: colors.violet,
+      },
+    },
+  },
 };
 
 const darkColors = {
-  background: "#121721",
-  element: "#19202D",
+  background: "hsla(219, 29%, 10%, 1)",
+  element: "hsla(219, 29%, 14%, 1)",
+  inputs: {
+    placeholder: "hsla(0, 0%, 100%, 0.5)",
+    text: colors.white,
+    border: "hsla(214, 17%, 51%, 0.2)",
+  },
+  checkbox: {
+    background: "hsla(0, 0%, 100%, 0.1)",
+  },
+  buttons: {
+    primary: {
+      background: colors.violet,
+      text: colors.white,
+      hover: {
+        background: colors.lightViolet,
+        text: colors.white,
+      },
+    },
+    secondary: {
+      background: "hsla(0, 0%, 100%, .1)",
+      text: colors.white,
+      hover: {
+        background: "hsla(0, 0%, 100%, .35)",
+        text: colors.violet,
+      },
+    },
+  },
 };
 
 export default function getTheme(isDark: boolean): DefaultTheme {
   return {
-    colors: Object.assign(
-      {},
-      {
-        violet: "#5964E0",
-        lightViolet: "#939BF4",
-        grey: "#9DAEC2",
-        darkGrey: "#6E8098",
-        white: "#FFFFFF",
-      },
-      isDark ? darkColors : lightColors
-    ),
+    colors: Object.assign({}, colors, isDark ? darkColors : lightColors),
 
     fontSizes: {
       h1: "28px",

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 0 20px;
+  gap: 0 15px;
 `;
 
 export const Knob = styled.span`

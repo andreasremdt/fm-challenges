@@ -10,6 +10,32 @@ declare module "styled-components" {
       grey: string;
       darkGrey: string;
       white: string;
+      inputs: {
+        placeholder: string;
+        text: string;
+        border: string;
+      };
+      checkbox: {
+        background: string;
+      };
+      buttons: {
+        primary: {
+          background: string;
+          text: string;
+          hover: {
+            background: string;
+            text: string;
+          };
+        };
+        secondary: {
+          background: string;
+          text: string;
+          hover: {
+            background: string;
+            text: string;
+          };
+        };
+      };
     };
 
     fontSizes: {

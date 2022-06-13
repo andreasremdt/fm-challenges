@@ -20,4 +20,10 @@ export default createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
   }
+
+  input, select {
+    font: inherit;
+    border: none;
+    appearance: none;
+  }
 `;

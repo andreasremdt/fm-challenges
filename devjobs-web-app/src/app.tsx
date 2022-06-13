@@ -7,7 +7,7 @@ import JobPage from "./pages/job-page";
 import StyleGuide from "./pages/style-guide";
 
 import Header from "./components/header";
-import ColorSwitch from "./components/color-switch";
+import LightSwitch from "./components/light-switch";
 import GlobalStyles from "./global.css";
 import * as Styled from "./main.styled";
 import getTheme from "./theme";
@@ -34,7 +34,7 @@ function App() {
 
         <Styled.Container>
           <Header>
-            <ColorSwitch isDark={isDark} onDarkToggle={setIsDark} />
+            <LightSwitch isDark={isDark} onDarkToggle={setIsDark} />
           </Header>
 
           <BrowserRouter>

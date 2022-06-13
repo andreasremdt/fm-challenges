@@ -1,11 +1,11 @@
-import * as Styled from "./color-switch.styled";
+import * as Styled from "./light-switch.styled";
 
-type ColorSwitchProps = {
+type LightSwitchProps = {
   isDark: boolean;
   onDarkToggle: (isDark: boolean) => void;
 };
 
-function ColorSwitch({ isDark, onDarkToggle }: ColorSwitchProps) {
+function LightSwitch({ isDark, onDarkToggle }: LightSwitchProps) {
   return (
     <Styled.Wrapper>
       <svg width="20" height="19" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -33,4 +33,4 @@ function ColorSwitch({ isDark, onDarkToggle }: ColorSwitchProps) {
   );
 }
 
-export default ColorSwitch;
+export default LightSwitch;
