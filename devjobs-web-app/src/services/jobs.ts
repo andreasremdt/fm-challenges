@@ -20,9 +20,9 @@ export type Job = {
   };
 };
 
-type ReturnWithData = {
+type ReturnWithData<K> = {
   success: true;
-  data: Job[];
+  data: K;
   error: null;
 };
 
@@ -33,18 +33,47 @@ type ReturnWithError = {
 };
 
 const jobs = {
-  async getAll(): Promise<ReturnWithData | ReturnWithError> {
+  async getAll(): Promise<ReturnWithData<Job[]> | ReturnWithError> {
     try {
       const response = await fetch("/data.json");
 
       if (response.ok) {
-        const json = await response.json();
+        const json = (await response.json()) as Job[];
 
         return {
           success: true,
-          data: json as Job[],
+          data: json,
           error: null,
         };
+      } else {
+        throw new Error(`Could not fetch data: ${response.status} - ${response.statusText}`);
+      }
+    } catch (ex: any) {
+      return {
+        success: false,
+        error: ex.message,
+        data: null,
+      };
+    }
+  },
+
+  async get(jobId: number): Promise<ReturnWithData<Job> | ReturnWithError> {
+    try {
+      const response = await fetch("/data.json");
+
+      if (response.ok) {
+        const json = (await response.json()) as Job[];
+        const job = json.find((job) => job.id === jobId);
+
+        if (job) {
+          return {
+            success: true,
+            data: job,
+            error: null,
+          };
+        }
+
+        throw new Error(`Could not get job with ID ${jobId}: 404 - Not Found`);
       } else {
         throw new Error(`Could not fetch data: ${response.status} - ${response.statusText}`);
       }

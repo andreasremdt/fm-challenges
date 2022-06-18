@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Button = styled.button<{ variant: "primary" | "secondary" }>`
+export const Button = styled.button<{ variant?: "primary" | "secondary" }>`
   font-weight: bold;
   border-radius: 5px;
   height: 48px;
@@ -12,14 +12,15 @@ export const Button = styled.button<{ variant: "primary" | "secondary" }>`
   border: none;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
 
   ${(props) => `
-    background-color: ${props.theme.colors.buttons[props.variant].background};
-    color: ${props.theme.colors.buttons[props.variant].text};
+    background-color: ${props.theme.colors.buttons[props.variant || "primary"].background};
+    color: ${props.theme.colors.buttons[props.variant || "primary"].text};
 
     &:hover {
-      background-color: ${props.theme.colors.buttons[props.variant].hover.background};
-      color: ${props.theme.colors.buttons[props.variant].hover.text};
+      background-color: ${props.theme.colors.buttons[props.variant || "primary"].hover.background};
+      color: ${props.theme.colors.buttons[props.variant || "primary"].hover.text};
     }
 
     &:focus-visible {

@@ -13,9 +13,7 @@ function JobPreview({ job }: JobPreviewProps) {
       <Styled.Title>
         <Link to={`/jobs/${job.id}`}>{job.position}</Link>
       </Styled.Title>
-      <Styled.Logo style={{ background: job.logoBackground }}>
-        <img src={job.logo} alt="" />
-      </Styled.Logo>
+      <Styled.CompanyLogo url={job.logo!} bg={job.logoBackground!} />
       <Styled.Meta>
         {job.postedAt} <span>•</span> {job.contract}
       </Styled.Meta>

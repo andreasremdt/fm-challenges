@@ -14,6 +14,7 @@ export default createGlobalStyle`
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
     background-color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.darkGrey};
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -25,5 +26,17 @@ export default createGlobalStyle`
     font: inherit;
     border: none;
     appearance: none;
+  }
+
+  h1, h2, h3 {
+    color: ${(props) => props.theme.colors.headings.text};
+  }
+
+  p, ul, li {
+    line-height: ${(props) => props.theme.lineHeights.p};
+  }
+
+  li {
+    margin-bottom: 14px;
   }
 `;

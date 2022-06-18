@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import Logo from "./logo";
+
 export const Card = styled.article`
   background-color: ${(props) => props.theme.colors.element};
   border-radius: 6px;
@@ -11,17 +13,12 @@ export const Card = styled.article`
   margin-top: 25px;
 `;
 
-export const Logo = styled.figure`
+export const CompanyLogo = styled(Logo)`
   order: 1;
-  width: 50px;
-  aspect-ratio: 1;
   border-radius: 15px;
-  display: grid;
-  place-items: center;
   position: absolute;
   top: -25px;
   left: 32px;
-  margin: unset;
 `;
 
 export const Meta = styled.p`

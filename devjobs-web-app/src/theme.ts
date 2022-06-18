@@ -76,7 +76,7 @@ const darkColors = {
       text: colors.white,
       hover: {
         background: "hsla(0, 0%, 100%, .35)",
-        text: colors.violet,
+        text: colors.white,
       },
     },
   },
