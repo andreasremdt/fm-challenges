@@ -12,7 +12,8 @@ const CommonInputStyles = css`
 
 export const Form = styled.form`
   background-color: ${(props) => props.theme.colors.element};
-  margin-inline: 165px;
+  margin-inline: auto;
+  max-width: 1110px;
   border-radius: 6px;
   transform: translateY(-50%);
   display: flex;

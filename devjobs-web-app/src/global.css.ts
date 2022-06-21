@@ -8,6 +8,10 @@ export default createGlobalStyle`
     transition: background-color .1s linear, color .1s linear;
   }
 
+  html, body, #app {
+    height: 100%;
+  }
+
   body {
     margin: unset;
     font-family: 'Kumbh Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -28,7 +32,7 @@ export default createGlobalStyle`
     appearance: none;
   }
 
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     color: ${(props) => props.theme.colors.headings.text};
   }
 
@@ -37,6 +41,6 @@ export default createGlobalStyle`
   }
 
   li {
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
 `;

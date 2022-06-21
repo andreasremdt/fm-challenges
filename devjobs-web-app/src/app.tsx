@@ -9,7 +9,6 @@ import StyleGuide from "./pages/style-guide";
 import Header from "./components/header";
 import LightSwitch from "./components/light-switch";
 import GlobalStyles from "./global.css";
-import * as Styled from "./main.styled";
 import getTheme from "./theme";
 
 function App() {
@@ -32,19 +31,17 @@ function App() {
       <ThemeProvider theme={getTheme(isDark)}>
         <GlobalStyles />
 
-        <Styled.Container>
+        <BrowserRouter>
           <Header>
             <LightSwitch isDark={isDark} onDarkToggle={setIsDark} />
           </Header>
 
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/jobs/:jobId" element={<JobPage />} />
-              <Route path="/style-guide" element={<StyleGuide />} />
-            </Routes>
-          </BrowserRouter>
-        </Styled.Container>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/jobs/:jobId" element={<JobPage />} />
+            <Route path="/style-guide" element={<StyleGuide />} />
+          </Routes>
+        </BrowserRouter>
       </ThemeProvider>
     </React.StrictMode>
   );
