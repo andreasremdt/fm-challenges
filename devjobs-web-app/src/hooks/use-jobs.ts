@@ -5,15 +5,18 @@ function useJobs() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [slice, setSlice] = useState(0);
+
+  const loadMore = () => setSlice(slice + 1);
 
   useEffect(() => {
     const fetch = async () => {
       setLoading(true);
 
-      const { success, error, data } = await jobService.getAll();
+      const { success, error, data } = await jobService.getAll(slice);
 
       if (success) {
-        setJobs(data);
+        setJobs([...jobs, ...data]);
       } else {
         setError(error);
       }
@@ -22,9 +25,9 @@ function useJobs() {
     };
 
     fetch();
-  }, []);
+  }, [slice]);
 
-  return { loading, jobs, error };
+  return { loading, jobs, error, loadMore };
 }
 
 export default useJobs;

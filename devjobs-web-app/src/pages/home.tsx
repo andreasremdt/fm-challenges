@@ -11,7 +11,7 @@ function Home() {
     location: "",
     fullTimeOnly: false,
   });
-  const { loading, jobs, error } = useJobs();
+  const { loading, jobs, error, loadMore } = useJobs();
 
   const locations = Array.from(new Set(jobs.map((job) => job.location)));
 
@@ -47,6 +47,8 @@ function Home() {
         {filteredJobs.map((job) => (
           <JobPreview key={job.id} job={job} />
         ))}
+
+        <Styled.LoadMoreButton onClick={loadMore}>Load More</Styled.LoadMoreButton>
       </Styled.Container>
     </>
   );
