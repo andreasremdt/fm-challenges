@@ -4,7 +4,6 @@ import { ThemeProvider } from "styled-components";
 
 import Home from "./pages/home";
 import JobPage from "./pages/job-page";
-import StyleGuide from "./pages/style-guide";
 
 import Header from "./components/header";
 import LightSwitch from "./components/light-switch";
@@ -39,7 +38,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/jobs/:jobId" element={<JobPage />} />
-            <Route path="/style-guide" element={<StyleGuide />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
