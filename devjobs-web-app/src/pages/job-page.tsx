@@ -14,7 +14,9 @@ function JobPage() {
     <>
       <Styled.TopHeader>
         <Styled.Column>
-          <Heading level="h1">{job.company}</Heading>
+          <Heading level="h2" as="h1">
+            {job.company}
+          </Heading>
           <Styled.Link href={job.website} target="_blank" rel="noopener nofollow noreferrer">
             {job.website}
           </Styled.Link>
@@ -38,7 +40,7 @@ function JobPage() {
             </Heading>
             <Styled.Location>{job.location}</Styled.Location>
           </Styled.Column>
-          <Button>Apply Now</Button>
+          <Styled.ApplyButton>Apply Now</Styled.ApplyButton>
         </Styled.SubHeader>
 
         <p>{job.description}</p>
@@ -70,7 +72,7 @@ function JobPage() {
             <Heading level="h3">{job.position}</Heading>
             <Styled.FooterCompany>{job.company}</Styled.FooterCompany>
           </Styled.Column>
-          <Button>Apply Now</Button>
+          <Styled.ApplyButton>Apply Now</Styled.ApplyButton>
         </Styled.FooterContainer>
       </Styled.Footer>
     </>

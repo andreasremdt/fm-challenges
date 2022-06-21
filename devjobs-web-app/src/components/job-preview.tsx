@@ -10,7 +10,7 @@ type JobPreviewProps = {
 function JobPreview({ job }: JobPreviewProps) {
   return (
     <Styled.Card>
-      <Styled.Title>
+      <Styled.Title level="h3">
         <Link to={`/jobs/${job.id}`}>{job.position}</Link>
       </Styled.Title>
       <Styled.CompanyLogo url={job.logo!} bg={job.logoBackground!} />

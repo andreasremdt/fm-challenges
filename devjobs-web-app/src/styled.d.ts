@@ -41,6 +41,14 @@ declare module "styled-components" {
             text: string;
           };
         };
+        transparent: {
+          background: string;
+          text: string;
+          hover: {
+            background: string;
+            text: string;
+          };
+        };
       };
     };
 

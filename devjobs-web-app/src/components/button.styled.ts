@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Button = styled.button<{ variant?: "primary" | "secondary" }>`
+export const Button = styled.button<{ variant?: "primary" | "secondary" | "transparent" }>`
   font-weight: bold;
   border-radius: 5px;
   height: 48px;
@@ -13,6 +13,7 @@ export const Button = styled.button<{ variant?: "primary" | "secondary" }>`
   cursor: pointer;
   outline: none;
   text-decoration: none;
+  white-space: nowrap;
 
   ${(props) => `
     background-color: ${props.theme.colors.buttons[props.variant || "primary"].background};

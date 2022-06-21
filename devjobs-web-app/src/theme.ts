@@ -42,6 +42,14 @@ const lightColors = {
         text: colors.violet,
       },
     },
+    transparent: {
+      background: "transparent",
+      text: colors.darkGrey,
+      hover: {
+        background: "transparent",
+        text: colors.grey,
+      },
+    },
   },
 };
 
@@ -77,6 +85,14 @@ const darkColors = {
       hover: {
         background: "hsla(0, 0%, 100%, .35)",
         text: colors.white,
+      },
+    },
+    transparent: {
+      background: "transparent",
+      text: colors.white,
+      hover: {
+        background: "transparent",
+        text: colors.grey,
       },
     },
   },

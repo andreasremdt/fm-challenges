@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import Logo from "./logo";
+import Heading from "./heading";
 
 export const Card = styled.article`
   background-color: ${(props) => props.theme.colors.element};
@@ -33,12 +34,13 @@ export const Meta = styled.p`
     display: inline-block;
     margin-inline: 5px;
   }
+
+  @media (max-width: 600px) {
+    margin-bottom: 5px;
+  }
 `;
 
-export const Title = styled.h3`
-  font-size: ${(props) => props.theme.fontSizes.h3};
-  line-height: ${(props) => props.theme.lineHeights.h3};
-  margin: unset;
+export const Title = styled(Heading)`
   order: 3;
 
   a {
@@ -55,6 +57,11 @@ export const Company = styled.p`
   color: ${(props) => props.theme.colors.darkGrey};
   order: 4;
   margin-block: 10px;
+  flex: 1;
+
+  @media (max-width: 600px) {
+    margin-top: 5px;
+  }
 `;
 
 export const Location = styled.p`

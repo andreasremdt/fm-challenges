@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.h1<{ level: "h1" | "h2" | "h3" | "h4" }>`
   margin: unset;
