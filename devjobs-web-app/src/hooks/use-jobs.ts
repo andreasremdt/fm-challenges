@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import jobService, { Job, SLICE_SIZE } from "../services/jobs";
+
+import jobService, { Job, SLICE_SIZE } from "@/services/jobs";
 
 function useJobs() {
   const [jobs, setJobs] = useState<Job[]>([]);

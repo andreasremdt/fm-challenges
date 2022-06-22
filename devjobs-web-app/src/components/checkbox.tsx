@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
+
 import * as Styled from "./checkbox.styled";
 
 function Checkbox({ children, ...props }: ComponentPropsWithoutRef<"input">) {

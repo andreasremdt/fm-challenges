@@ -1,33 +1,21 @@
-import React, { useEffect, useState } from "react";
+import { StrictMode } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
-import Home from "./pages/home";
-import JobPage from "./pages/job-page";
-import NotFound from "./pages/not-found";
-
-import Header from "./components/header";
-import LightSwitch from "./components/light-switch";
-import GlobalStyles from "./global.css";
-import getTheme from "./theme";
+import Home from "@/pages/home";
+import JobPage from "@/pages/job-page";
+import NotFound from "@/pages/not-found";
+import Header from "@/components/header";
+import LightSwitch from "@/components/light-switch";
+import useColorSwitch from "@/hooks/use-color-switch";
+import GlobalStyles from "@/global.css";
+import getTheme from "@/theme";
 
 function App() {
-  const [isDark, setIsDark] = useState(() => {
-    const key = localStorage.getItem("dark_mode_enabled");
-
-    if (!key || key === "false") {
-      return false;
-    }
-
-    return true;
-  });
-
-  useEffect(() => {
-    localStorage.setItem("dark_mode_enabled", String(isDark));
-  }, [isDark]);
+  const [isDark, setIsDark] = useColorSwitch();
 
   return (
-    <React.StrictMode>
+    <StrictMode>
       <ThemeProvider theme={getTheme(isDark)}>
         <GlobalStyles />
 
@@ -43,7 +31,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
-    </React.StrictMode>
+    </StrictMode>
   );
 }
 

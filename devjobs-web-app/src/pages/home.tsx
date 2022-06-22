@@ -1,8 +1,9 @@
+import JobPreview from "@/components/job-preview";
+import SearchBar from "@/components/search-bar";
+import useJobs from "@/hooks/use-jobs";
+import useJobFilter from "@/hooks/use-jobs-filter";
+
 import * as Styled from "./home.styled";
-import JobPreview from "../components/job-preview";
-import SearchBar from "../components/search-bar";
-import useJobs from "../hooks/use-jobs";
-import useJobFilter from "../hooks/use-jobs-filter";
 
 function Home() {
   const { loading, jobs, error, loadMore, hasMoreJobs } = useJobs();

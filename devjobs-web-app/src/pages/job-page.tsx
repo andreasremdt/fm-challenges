@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Button from "../components/button";
-import Heading from "../components/heading";
-import useJob from "../hooks/use-job";
+import Button from "@/components/button";
+import Heading from "@/components/heading";
+import useJob from "@/hooks/use-job";
+
 import * as Styled from "./job-page.styled";
 
 function JobPage() {

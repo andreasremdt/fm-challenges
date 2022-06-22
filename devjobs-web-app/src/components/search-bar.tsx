@@ -1,6 +1,7 @@
 import { useState, FormEvent, MouseEvent, useRef } from "react";
 
-import Checkbox from "./checkbox";
+import Checkbox from "@/components/checkbox";
+
 import * as Styled from "./search-bar.styled";
 
 export type SearchProps = {

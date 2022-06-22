@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import jobService, { Job } from "../services/jobs";
+import jobService, { Job } from "@/services/jobs";
 
 function useJob() {
   const { jobId } = useParams();

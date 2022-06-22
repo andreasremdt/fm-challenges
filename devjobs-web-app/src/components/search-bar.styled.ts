@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from "styled-components";
-import Button from "./button";
+
+import Button from "@/components/button";
 
 const CommonInputStyles = css`
   background-color: transparent;

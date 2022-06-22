@@ -1,6 +1,7 @@
 import { useState } from "react";
-import type { SearchProps } from "../components/search-bar";
-import type { Job } from "../services/jobs";
+
+import type { SearchProps } from "@/components/search-bar";
+import type { Job } from "@/services/jobs";
 
 function useJobFilter(jobs: Job[]) {
   const [searchProps, setSearchProps] = useState<SearchProps>({

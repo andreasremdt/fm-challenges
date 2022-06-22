@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
-import Button from "../components/button";
-import Heading from "../components/heading";
+import Button from "@/components/button";
+import Heading from "@/components/heading";
+
 import * as Styled from "./not-found.styled";
 
 function NotFound() {

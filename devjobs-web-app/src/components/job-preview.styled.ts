@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import Logo from "./logo";
-import Heading from "./heading";
+import Logo from "@/components/logo";
+import Heading from "@/components/heading";
 
 export const Card = styled.article`
   background-color: ${(props) => props.theme.colors.element};

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-import type { Job } from "../services/jobs";
+import type { Job } from "@/services/jobs";
+
 import * as Styled from "./job-preview.styled";
 
 type JobPreviewProps = {
