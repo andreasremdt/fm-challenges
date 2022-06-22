@@ -110,11 +110,11 @@ export default function getTheme(isDark: boolean): DefaultTheme {
       p: "16px",
     },
     lineHeights: {
-      h1: "34px",
-      h2: "29px",
-      h3: "24px",
-      h4: "18px",
-      p: "26px",
+      h1: "1.1",
+      h2: "1.2",
+      h3: "1.2",
+      h4: "1.2",
+      p: "1.5",
     },
   };
 }

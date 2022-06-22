@@ -3,28 +3,28 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 0 15px;
+  gap: 0 0.9375rem;
 `;
 
 export const Knob = styled.span`
   display: block;
-  width: 14px;
+  width: 0.875rem;
   aspect-ratio: 1;
-  border-radius: 14px;
+  border-radius: 0.875rem;
   background-color: ${(props) => props.theme.colors.violet};
   transition: background-color 0.05s linear, left 0.1s ease-out;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 0.3125rem;
+  left: 0.3125rem;
 `;
 
 export const Label = styled.label`
   cursor: pointer;
   position: relative;
-  width: 48px;
-  height: 24px;
+  width: 3rem;
+  height: 1.5rem;
   background-color: ${(props) => props.theme.colors.white};
-  border-radius: 24px;
+  border-radius: 1.5rem;
 
   &:hover ${Knob} {
     background-color: ${(props) => props.theme.colors.lightViolet};
@@ -43,7 +43,7 @@ export const Input = styled.input`
   border: 0;
 
   &:checked + ${Knob} {
-    left: 28px;
+    left: 1.75rem;
   }
 
   &:focus-visible + ${Knob} {

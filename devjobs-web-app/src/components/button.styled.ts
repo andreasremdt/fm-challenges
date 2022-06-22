@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const Button = styled.button<{ variant?: "primary" | "secondary" | "transparent" }>`
   font-weight: bold;
-  border-radius: 5px;
-  height: 48px;
-  padding-inline: 40px;
+  border-radius: 0.3125rem;
+  height: 3rem;
+  padding-inline: 2rem;
   display: inline-flex;
   align-items: center;
   font-family: inherit;

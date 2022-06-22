@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.label`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
   font-weight: bold;
   cursor: pointer;
   color: ${(props) => props.theme.colors.inputs.text};
@@ -11,10 +11,10 @@ export const Wrapper = styled.label`
 
 export const Background = styled.span`
   display: block;
-  width: 24px;
+  width: 1.5rem;
   aspect-ratio: 1;
   background-color: ${(props) => props.theme.colors.checkbox.background};
-  border-radius: 3px;
+  border-radius: 0.1875rem;
 `;
 
 export const Input = styled.input`

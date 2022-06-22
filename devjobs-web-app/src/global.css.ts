@@ -63,6 +63,6 @@ export default createGlobalStyle`
   }
 
   li {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
   }
 `;

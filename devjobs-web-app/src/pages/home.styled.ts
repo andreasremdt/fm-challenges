@@ -3,22 +3,22 @@ import styled from "styled-components";
 import Button from "../components/button";
 
 export const Container = styled.main`
-  margin: 80px auto;
+  margin: 5rem auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px 30px;
-  width: clamp(16rem, calc(100% - 80px), 1110px);
+  gap: 2.5rem 1.875rem;
+  width: clamp(16rem, calc(100% - 5rem), 69.375rem);
 
-  @media (max-width: 768px) {
-    margin-block: 40px;
-    gap: 40px 10px;
+  @media (max-width: 48rem) {
+    margin-block: 2.5rem;
+    gap: 2.5rem 0.625rem;
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 37.5rem) {
     grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-    width: clamp(16rem, calc(100% - 40px), 1110px);
+    gap: 1.25rem;
+    width: clamp(16rem, calc(100% - 2.5rem), 69.375rem);
   }
 `;
 
@@ -31,8 +31,8 @@ export const ErrorState = styled.p`
   grid-column: 1 / -1;
   background-color: ${(props) => props.theme.colors.violet};
   color: ${(props) => props.theme.colors.white};
-  border-radius: 6px;
-  padding: 20px;
+  border-radius: 0.375rem;
+  padding: 1.25rem;
   text-align: center;
 `;
 

@@ -6,43 +6,43 @@ import Heading from "@/components/heading";
 
 export const Card = styled.article`
   background-color: ${(props) => props.theme.colors.element};
-  border-radius: 6px;
-  padding: 32px;
+  border-radius: 0.375rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  margin-top: 25px;
+  margin-top: 1.5625rem;
 `;
 
 export const CompanyLogo = styled(Logo)`
   order: 1;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
   position: absolute;
-  top: -25px;
-  left: 32px;
+  top: -1.5625rem;
+  left: 2rem;
 `;
 
 export const Meta = styled.p`
   color: ${(props) => props.theme.colors.darkGrey};
   order: 2;
-  margin-block: 10px;
+  margin-block: 0.625rem;
 
   > span {
-    font-size: 30px;
+    font-size: 1.875rem;
     line-height: 0;
     vertical-align: middle;
     display: inline-block;
-    margin-inline: 5px;
+    margin-inline: 0.3125rem;
   }
 
-  @media (max-width: 600px) {
-    margin-bottom: 5px;
+  @media (max-width: 37.5rem) {
+    margin-bottom: 0.3125rem;
   }
 `;
 
 export const TitleLink = styled(Link)`
-  border-radius: 2px;
+  border-radius: 0.125rem;
 
   &:focus-visible {
     outline: 2px solid ${(props) => props.theme.colors.violet};
@@ -66,11 +66,11 @@ export const Title = styled(Heading)`
 export const Company = styled.p`
   color: ${(props) => props.theme.colors.darkGrey};
   order: 4;
-  margin-block: 10px;
+  margin-block: 0.625rem;
   flex: 1;
 
-  @media (max-width: 600px) {
-    margin-top: 5px;
+  @media (max-width: 37.5rem) {
+    margin-top: 0.3125rem;
   }
 `;
 
@@ -82,5 +82,5 @@ export const Location = styled.p`
   font-size: 14px;
   font-weight: bold;
   color: ${(props) => props.theme.colors.violet};
-  margin-block: 30px 0;
+  margin-block: 1.875rem 0;
 `;

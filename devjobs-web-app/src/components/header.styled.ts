@@ -4,22 +4,22 @@ import { Link } from "react-router-dom";
 import getBasePath from "@/utils/path";
 
 export const Header = styled.header`
-  height: 160px;
-  width: clamp(16rem, 100vw, 1440px);
+  height: 10rem;
+  width: clamp(16rem, 100vw, 90rem);
   margin-inline: auto;
-  padding-inline: 40px;
+  padding-inline: 2.5rem;
   color: ${(props) => props.theme.colors.white};
   background: transparent url(${getBasePath("desktop/bg-pattern-header.svg")}) no-repeat left top;
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     background-image: url(${getBasePath("tablet/bg-pattern-header.svg")});
   }
 
-  @media (max-width: 600px) {
-    padding-inline: 24px;
+  @media (max-width: 37.5rem) {
+    padding-inline: 1.5rem;
     background-image: url(${getBasePath("mobile/bg-pattern-header.svg")});
     background-size: cover;
-    height: 136px;
+    height: 8.5rem;
   }
 `;
 
@@ -33,11 +33,11 @@ export const Logo = styled(Link)`
 export const Inner = styled.div`
   display: flex;
   align-items: center;
-  padding-top: 40px;
-  max-width: 1110px;
+  padding-top: 2.5rem;
+  max-width: 69.375rem;
   margin-inline: auto;
 
-  @media (max-width: 600px) {
-    padding-top: 33px;
+  @media (max-width: 37.5rem) {
+    padding-top: 2.0625rem;
   }
 `;
