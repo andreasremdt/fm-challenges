@@ -74,6 +74,7 @@ function SearchBar({ availableLocations, onSearch }: SearchBarProps) {
   return (
     <Styled.Form noValidate onSubmit={handleSubmit}>
       <Styled.SearchInput
+        aria-label="Filter by title, companies, expertise"
         type="search"
         value={search}
         onChange={(event) => setSearch(event.target.value)}
@@ -82,7 +83,12 @@ function SearchBar({ availableLocations, onSearch }: SearchBarProps) {
 
       <Styled.Overlay open={filterDialogVisible} onClick={handleDialogClose} ref={dialogRef}>
         <Styled.InnerOverlay>
-          <Styled.Select required value={location} onChange={(event) => setLocation(event.target.value)}>
+          <Styled.Select
+            required
+            value={location}
+            onChange={(event) => setLocation(event.target.value)}
+            aria-label="Filter by location"
+          >
             <option value="">Filter by location...</option>
             {availableLocations.map((location) => (
               <option key={location} value={location}>

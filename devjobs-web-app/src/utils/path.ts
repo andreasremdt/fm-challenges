@@ -1,5 +1,7 @@
 function getBasePath(url: string) {
-  return `${import.meta.env.BASE_URL}/${url}`;
+  const sanitized = url.startsWith("/") ? url.slice(1) : url;
+
+  return `${import.meta.env.BASE_URL}${sanitized}`;
 }
 
 export default getBasePath;
