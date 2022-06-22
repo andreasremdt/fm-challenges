@@ -5,7 +5,7 @@ import useJobs from "../hooks/use-jobs";
 import useJobFilter from "../hooks/use-jobs-filter";
 
 function Home() {
-  const { loading, jobs, error, loadMore } = useJobs();
+  const { loading, jobs, error, loadMore, hasMoreJobs } = useJobs();
   const locations = Array.from(new Set(jobs.map((job) => job.location)));
   const { filteredJobs, setSearchProps } = useJobFilter(jobs);
 
@@ -30,7 +30,7 @@ function Home() {
               <JobPreview key={job.id} job={job} />
             ))}
 
-            <Styled.LoadMoreButton onClick={loadMore}>Load More</Styled.LoadMoreButton>
+            {hasMoreJobs && <Styled.LoadMoreButton onClick={loadMore}>Load More</Styled.LoadMoreButton>}
           </>
         )}
       </Styled.Container>

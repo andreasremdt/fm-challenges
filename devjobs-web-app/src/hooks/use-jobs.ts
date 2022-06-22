@@ -1,33 +1,35 @@
-import { useEffect, useState } from "react";
-import jobService, { Job } from "../services/jobs";
+import { useEffect, useState, useRef } from "react";
+import jobService, { Job, SLICE_SIZE } from "../services/jobs";
 
 function useJobs() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
-  const [slice, setSlice] = useState(0);
+  const [hasMoreJobs, setHasMoreJobs] = useState(true);
+  const sliceRef = useRef(0);
 
-  const loadMore = () => setSlice(slice + 1);
+  async function fetchJobs(slice?: number) {
+    const { success, error, data } = await jobService.getAll(slice);
+
+    if (success) {
+      setHasMoreJobs(data.length === SLICE_SIZE);
+      setJobs([...jobs, ...data]);
+    } else {
+      setError(error);
+    }
+  }
+
+  async function loadMore() {
+    fetchJobs((sliceRef.current += 1));
+  }
 
   useEffect(() => {
-    const fetch = async () => {
-      setLoading(true);
+    setLoading(true);
 
-      const { success, error, data } = await jobService.getAll(slice);
+    fetchJobs().then(() => setLoading(false));
+  }, []);
 
-      if (success) {
-        setJobs([...jobs, ...data]);
-      } else {
-        setError(error);
-      }
-
-      setLoading(false);
-    };
-
-    fetch();
-  }, [slice]);
-
-  return { loading, jobs, error, loadMore };
+  return { loading, jobs, error, loadMore, hasMoreJobs };
 }
 
 export default useJobs;

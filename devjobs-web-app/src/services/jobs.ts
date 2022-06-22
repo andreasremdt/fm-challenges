@@ -32,11 +32,13 @@ type ReturnWithError = {
   error: string;
 };
 
-const SLICE_SIZE = 12;
+export const SLICE_SIZE = 12;
 
 const jobs = {
   async getAll(slice = 0): Promise<ReturnWithData<Job[]> | ReturnWithError> {
     try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       const response = await fetch("/data.json");
 
       if (response.ok) {
@@ -61,6 +63,8 @@ const jobs = {
 
   async get(jobId: number): Promise<ReturnWithData<Job> | ReturnWithError> {
     try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       const response = await fetch("/data.json");
 
       if (response.ok) {
