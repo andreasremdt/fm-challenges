@@ -1,3 +1,5 @@
+import getBasePath from "@/utils/path";
+
 import * as Styled from "./logo.styled";
 
 type LogoProps = {
@@ -9,7 +11,7 @@ type LogoProps = {
 function Logo({ url, size = "small", ...props }: LogoProps) {
   return (
     <Styled.Wrapper size={size} {...props}>
-      <img src={url} alt="" />
+      <img src={getBasePath(url)} alt="" />
     </Styled.Wrapper>
   );
 }

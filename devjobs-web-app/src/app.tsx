@@ -20,7 +20,7 @@ function App() {
       <ThemeProvider theme={getTheme(isDark)}>
         <GlobalStyles />
 
-        <BrowserRouter>
+        <BrowserRouter basename="/devjobs-web-app/dist">
           <Header>
             <LightSwitch isDark={isDark} onDarkToggle={toggleDarkMode} />
           </Header>

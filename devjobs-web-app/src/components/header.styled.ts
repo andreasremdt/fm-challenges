@@ -1,21 +1,23 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import getBasePath from "@/utils/path";
+
 export const Header = styled.header`
   height: 160px;
   width: clamp(16rem, 100vw, 1440px);
   margin-inline: auto;
   padding-inline: 40px;
   color: ${(props) => props.theme.colors.white};
-  background: transparent url(desktop/bg-pattern-header.svg) no-repeat left top;
+  background: transparent url(${getBasePath("desktop/bg-pattern-header.svg")}) no-repeat left top;
 
   @media (max-width: 768px) {
-    background-image: url(tablet/bg-pattern-header.svg);
+    background-image: url(${getBasePath("tablet/bg-pattern-header.svg")});
   }
 
   @media (max-width: 600px) {
     padding-inline: 24px;
-    background-image: url(mobile/bg-pattern-header.svg);
+    background-image: url(${getBasePath("mobile/bg-pattern-header.svg")});
     background-size: cover;
     height: 136px;
   }

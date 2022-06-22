@@ -1,3 +1,5 @@
+import getBasePath from "@/utils/path";
+
 export type Job = {
   id: number;
   company: string;
@@ -40,7 +42,7 @@ const jobs = {
       // Artificial timeout to demonstrate the loading state
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      const response = await fetch("/data.json");
+      const response = await fetch(getBasePath("data.json"));
 
       if (response.ok) {
         const json = (await response.json()) as Job[];
@@ -64,7 +66,7 @@ const jobs = {
 
   async get(jobId: number): Promise<ReturnWithData<Job> | ReturnWithError> {
     try {
-      const response = await fetch("/data.json");
+      const response = await fetch(getBasePath("data.json"));
 
       if (response.ok) {
         const json = (await response.json()) as Job[];
