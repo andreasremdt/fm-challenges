@@ -6,11 +6,13 @@ import * as Styled from "./job-page.styled";
 function JobPage() {
   const { job, error, loading } = useJob();
 
-  if (loading || !job) {
-    return null;
-  }
-
-  return (
+  return loading ? (
+    <Styled.EmptyState>Loading, please wait...</Styled.EmptyState>
+  ) : error || !job ? (
+    <Styled.ErrorState>
+      Something went wrong getting this job. Sorry for that, please try again later.
+    </Styled.ErrorState>
+  ) : (
     <>
       <Styled.TopHeader>
         <Styled.Column>

@@ -4,6 +4,21 @@ import Logo from "../components/logo";
 import Heading from "../components/heading";
 import Button from "../components/button";
 
+export const EmptyState = styled.p`
+  text-align: center;
+  margin-top: 40px;
+`;
+
+export const ErrorState = styled.p`
+  background-color: ${(props) => props.theme.colors.violet};
+  color: ${(props) => props.theme.colors.white};
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+  width: clamp(16rem, calc(100% - 80px), 730px);
+  margin-inline: auto;
+`;
+
 export const TopHeader = styled.header`
   background-color: ${(props) => props.theme.colors.element};
   width: clamp(16rem, calc(100% - 80px), 730px);
