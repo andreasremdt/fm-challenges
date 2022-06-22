@@ -1,23 +1,39 @@
-import { useState, useEffect, Dispatch } from "react";
+import { useState, useEffect } from "react";
 
 const STORAGE_KEY = "dark_mode_enabled";
 
-function useColorSwitch(): [boolean, Dispatch<React.SetStateAction<boolean>>] {
+const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+function useColorSwitch(): [boolean, (isDark: boolean) => void] {
   const [isDark, setIsDark] = useState(() => {
     const key = localStorage.getItem(STORAGE_KEY);
 
-    if (!key || key === "false") {
-      return false;
+    if (!key) {
+      return colorScheme.matches;
     }
 
-    return true;
+    return key === "false" ? false : true;
   });
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, String(isDark));
-  }, [isDark]);
+    function handleColorSchemeChange(event: MediaQueryListEvent) {
+      if (!localStorage.getItem(STORAGE_KEY)) {
+        setIsDark(event.matches);
+      }
+    }
 
-  return [isDark, setIsDark];
+    colorScheme.addEventListener("change", handleColorSchemeChange);
+
+    return () => colorScheme.removeEventListener("change", handleColorSchemeChange);
+  }, []);
+
+  function toggleDarkMode(isDark: boolean) {
+    localStorage.setItem(STORAGE_KEY, String(isDark));
+
+    setIsDark(isDark);
+  }
+
+  return [isDark, toggleDarkMode];
 }
 
 export default useColorSwitch;

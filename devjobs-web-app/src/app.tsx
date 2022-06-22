@@ -13,7 +13,7 @@ const JobPage = lazy(() => import("@/pages/job-page"));
 const NotFoundPage = lazy(() => import("@/pages/not-found"));
 
 function App() {
-  const [isDark, setIsDark] = useColorSwitch();
+  const [isDark, toggleDarkMode] = useColorSwitch();
 
   return (
     <StrictMode>
@@ -22,7 +22,7 @@ function App() {
 
         <BrowserRouter>
           <Header>
-            <LightSwitch isDark={isDark} onDarkToggle={setIsDark} />
+            <LightSwitch isDark={isDark} onDarkToggle={toggleDarkMode} />
           </Header>
           <Suspense fallback={null}>
             <Routes>
