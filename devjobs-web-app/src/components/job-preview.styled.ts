@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Logo from "@/components/logo";
 import Heading from "@/components/heading";
@@ -37,6 +38,15 @@ export const Meta = styled.p`
 
   @media (max-width: 600px) {
     margin-bottom: 5px;
+  }
+`;
+
+export const TitleLink = styled(Link)`
+  border-radius: 2px;
+
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.theme.colors.violet};
+    outline-offset: 2px;
   }
 `;
 

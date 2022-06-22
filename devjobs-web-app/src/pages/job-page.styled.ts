@@ -79,9 +79,15 @@ export const Link = styled.a`
   text-decoration: none;
   margin-top: 10px;
   display: block;
+  border-radius: 2px;
 
   &:hover {
     text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.theme.colors.violet};
+    outline-offset: 2px;
   }
 `;
 

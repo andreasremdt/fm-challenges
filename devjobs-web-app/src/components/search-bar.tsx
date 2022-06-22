@@ -1,4 +1,4 @@
-import { useState, FormEvent, MouseEvent, useRef } from "react";
+import { useState, FormEvent, MouseEvent, useRef, useEffect } from "react";
 
 import Checkbox from "@/components/checkbox";
 
@@ -37,6 +37,39 @@ function SearchBar({ availableLocations, onSearch }: SearchBarProps) {
 
     onSearch({ search, location, fullTimeOnly });
   }
+
+  useEffect(() => {
+    if (filterDialogVisible) {
+      const focusable = dialogRef.current!.querySelectorAll("input, select, button");
+      let focused = 0;
+
+      function handleKeyDown(event: KeyboardEvent) {
+        if (event.key === "Tab") {
+          event.preventDefault();
+
+          if (event.shiftKey) {
+            if (focused === 0) {
+              focused = focusable.length - 1;
+            } else {
+              focused -= 1;
+            }
+          } else if (focused === focusable.length - 1) {
+            focused = 0;
+          } else {
+            focused += 1;
+          }
+
+          (focusable[focused] as HTMLElement).focus();
+        } else if (event.key === "Escape") {
+          setFilterDialogVisible(false);
+        }
+      }
+
+      window.addEventListener("keydown", handleKeyDown);
+
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }
+  }, [filterDialogVisible]);
 
   return (
     <Styled.Form noValidate onSubmit={handleSubmit}>

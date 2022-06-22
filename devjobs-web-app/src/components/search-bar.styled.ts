@@ -110,6 +110,10 @@ export const SearchInput = styled.input`
   @media (max-width: 600px) {
     padding-inline: 0;
   }
+
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.theme.colors.violet};
+  }
 `;
 
 export const Select = styled.select`
@@ -136,6 +140,10 @@ export const Select = styled.select`
     padding-inline: 60px 24px;
     border-bottom: 1px solid ${(props) => props.theme.colors.inputs.border};
     background-position: 24px 0;
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.theme.colors.violet};
   }
 `;
 
