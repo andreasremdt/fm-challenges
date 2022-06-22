@@ -44,6 +44,7 @@ export const TopHeader = styled.header`
 
   @media (max-width: 600px) {
     padding: 0 20px 20px;
+    transform: translateY(-20px);
     width: clamp(16rem, calc(100% - 40px), 730px);
   }
 `;
@@ -93,6 +94,7 @@ export const Container = styled.main`
 
   @media (max-width: 600px) {
     width: clamp(16rem, calc(100% - 40px), 730px);
+    padding-inline: 24px;
   }
 `;
 
