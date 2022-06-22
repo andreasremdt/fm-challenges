@@ -37,6 +37,7 @@ export const SLICE_SIZE = 12;
 const jobs = {
   async getAll(slice = 0): Promise<ReturnWithData<Job[]> | ReturnWithError> {
     try {
+      // Artificial timeout to demonstrate the loading state
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       const response = await fetch("/data.json");
@@ -63,8 +64,6 @@ const jobs = {
 
   async get(jobId: number): Promise<ReturnWithData<Job> | ReturnWithError> {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
       const response = await fetch("/data.json");
 
       if (response.ok) {

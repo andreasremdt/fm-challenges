@@ -1,10 +1,20 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Button from "../components/button";
 import Heading from "../components/heading";
 import useJob from "../hooks/use-job";
 import * as Styled from "./job-page.styled";
 
 function JobPage() {
+  const navigate = useNavigate();
   const { job, error, loading } = useJob();
+
+  useEffect(() => {
+    if (!loading && !job) {
+      navigate("/404");
+    }
+  }, [loading, job]);
 
   return loading ? (
     <Styled.EmptyState>Loading, please wait...</Styled.EmptyState>
