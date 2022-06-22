@@ -22,6 +22,20 @@ export const Container = styled.main`
   }
 `;
 
+export const EmptyState = styled.p`
+  justify-self: center;
+  grid-column: 1 / -1;
+`;
+
+export const ErrorState = styled.p`
+  grid-column: 1 / -1;
+  background-color: ${(props) => props.theme.colors.violet};
+  color: ${(props) => props.theme.colors.white};
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+`;
+
 export const LoadMoreButton = styled(Button)`
   justify-self: center;
   grid-column: 1 / -1;
