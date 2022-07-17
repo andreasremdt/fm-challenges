@@ -51,7 +51,6 @@ html:focus-within {
 }
 
 body {
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
   font: 500 clamp(16px, 2vw, 18px) / 1.5 var(--ff-primary), var(--ff-fallback);
   overflow-x: hidden;
@@ -188,15 +187,18 @@ h3 {
   justify-content: space-between;
 }
 
+/****************************************/
+/* HEADER                               */
+/****************************************/
 .primary-header {
-  margin-block: 2rem;
+  margin-block: 1.8rem;
 }
 
 /****************************************/
 /* HERO SECTION                         */
 /****************************************/
 .hero-section {
-  margin-block: 10.25rem;
+  margin-block: 9rem;
 }
 
 .hero-section .caption {
