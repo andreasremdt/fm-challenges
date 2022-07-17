@@ -10,7 +10,8 @@
     "equalizer-landing-page",
     "faq-accordion-card",
     "expenses-chart-component",
-    "devjobs-web-app"
+    "devjobs-web-app",
+    "in-browser-markdown-editor"
   ],
   "repository": {
     "type": "git",
