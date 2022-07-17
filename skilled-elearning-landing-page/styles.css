@@ -1,0 +1,356 @@
+/****************************************/
+/* VARIABLES                            */
+/****************************************/
+:root {
+  --clr-neutral-dark: hsl(233, 54%, 16%);
+  --clr-neutral-light: hsl(234, 25%, 52%);
+  --clr-link: hsl(341, 92%, 62%);
+  --clr-text: hsl(232, 10%, 56%);
+
+  --clr-gradient-orange: linear-gradient(to bottom, hsl(13, 100%, 64%), hsl(322, 87%, 55%));
+  --clr-gradient-violet: linear-gradient(to bottom, hsl(237, 100%, 64%) -54.32%, hsl(322, 87%, 56%) 100%);
+  --clr-gradient-active: linear-gradient(to bottom, hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 100%, 0.5));
+  --clr-gradient-background: linear-gradient(to bottom, hsl(0, 0%, 100%), hsl(236, 100%, 97%));
+
+  --ff-primary: "Plus Jakarta Sans";
+  --ff-fallback: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/****************************************/
+/* WEB FONTS                            */
+/****************************************/
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-display: swap;
+  src: url("./fonts/plus-jakarta-sans.woff2") format("woff2 supports variations"),
+    url("./fonts/plus-jakarta-sans.woff2") format("woff2-variations");
+  font-weight: 200 800;
+}
+
+/****************************************/
+/* RESET                                */
+/****************************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: unset;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  font: 500 clamp(16px, 2vw, 18px) / 1.5 var(--ff-primary), var(--ff-fallback);
+  overflow-x: hidden;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+p {
+  color: var(--clr-text);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+/****************************************/
+/* BUTTON                               */
+/****************************************/
+.button {
+  height: 3.5rem;
+  border-radius: 100vmax;
+  border: unset;
+  font-weight: 700;
+  padding-inline: 2rem;
+  cursor: pointer;
+  display: inline-flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+.button[data-type="dark"] {
+  background-color: var(--clr-neutral-dark);
+  color: white;
+}
+
+.button[data-type="dark"]:where(:hover, :focus-visible) {
+  background-color: var(--clr-neutral-light);
+}
+
+.button[data-type="gradient-orange"] {
+  background-image: var(--clr-gradient-orange);
+  color: white;
+}
+
+.button[data-type="gradient-orange"]:where(:hover, :focus-visible) {
+  background-image: var(--clr-gradient-active), var(--clr-gradient-orange);
+}
+
+.button[data-type="gradient-violet"] {
+  background-image: var(--clr-gradient-violet);
+  color: white;
+}
+
+.button[data-type="gradient-violet"]:where(:hover, :focus-visible) {
+  background-image: var(--clr-gradient-active), var(--clr-gradient-violet);
+}
+
+/****************************************/
+/* LINK                                 */
+/****************************************/
+.link {
+  color: var(--clr-link);
+  font-weight: 700;
+  text-decoration: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.link:where(:hover, :focus) {
+  opacity: 0.5;
+}
+
+/****************************************/
+/* UTIL CLASSES                         */
+/****************************************/
+.container {
+  max-width: 69.375rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.primary-header {
+  margin-block: 2rem;
+}
+
+/****************************************/
+/* HERO SECTION                         */
+/****************************************/
+.hero-section {
+  margin-block: 10.25rem;
+}
+
+.hero-section .caption {
+  max-width: 45%;
+}
+
+.hero-section .title {
+  font-size: 56px;
+  color: var(--clr-neutral-dark);
+}
+
+.hero-section .text {
+  margin-block: 1.875rem 2.5rem;
+}
+
+.hero-section .image {
+  position: absolute;
+  top: -398px;
+  right: -490px;
+  z-index: -1;
+}
+
+@media (max-width: 59.375rem) {
+  .hero-section {
+    margin-block: 6.25rem;
+  }
+
+  .hero-section .caption {
+    max-width: 55%;
+  }
+
+  .hero-section .image {
+    top: -30vw;
+    right: -320px;
+  }
+
+  .hero-section .title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .hero-section {
+    margin-block: 1rem;
+  }
+
+  .hero-section .image {
+    position: static;
+  }
+
+  .hero-section .caption {
+    max-width: unset;
+  }
+
+  .figure-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+/****************************************/
+/* COURSE SECTION                       */
+/****************************************/
+.course-section {
+  background-image: var(--clr-gradient-background);
+  padding-block: 8.75rem;
+}
+
+.course-section .grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5.25rem 1.875rem;
+}
+
+.course-section .title-wrapper {
+  background-image: var(--clr-gradient-orange);
+  border-radius: 0.9375rem;
+  padding: 4rem 2rem;
+}
+
+.course-section .title-wrapper .title {
+  color: white;
+  font-size: 32px;
+}
+
+.course-section .card {
+  background-color: white;
+  border-radius: 0.9375rem;
+  padding: 4rem 2rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1.5625rem 3.125rem hsla(233, 92%, 29%, 0.04);
+}
+
+.course-section .card .icon {
+  position: absolute;
+  top: -28px;
+  left: 32px;
+}
+
+.course-section .card .title {
+  font-size: 24px;
+  color: var(--clr-neutral-dark);
+}
+
+.course-section .card .text {
+  margin-block: 1.2rem 1.5rem;
+}
+
+.course-section .card .link {
+  margin-top: auto;
+}
+
+@media (max-width: 59.375rem) {
+  .course-section {
+    padding-block: 5rem;
+  }
+
+  .course-section .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.4375rem 0.625rem;
+  }
+
+  .course-section .title-wrapper .title {
+    font-size: 24px;
+  }
+
+  .course-section .card .title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .course-section {
+    padding-block: 0 5rem;
+  }
+
+  .course-section .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5625rem;
+  }
+
+  .course-section .title-wrapper {
+    padding: 1.75rem;
+  }
+
+  .course-section .card {
+    padding: 3.2rem 1.75rem 1.75rem;
+  }
+}
+
+/****************************************/
+/* FOOTER                               */
+/****************************************/
+.primary-footer {
+  padding-block: 2rem;
+  background-color: var(--clr-neutral-dark);
+}
