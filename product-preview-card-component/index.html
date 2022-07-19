@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Andreas Remdt" />
+    <meta name="description" content="This is a solution to the product preview card component on Frontend Mentor" />
+
+    <title>Frontend Mentor | Product preview card component</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main itemscope itemtype="https://schema.org/Product" class="product-card">
+      <p itemprop="category" class="category">Perfume</p>
+      <h1 itemprop="name" class="title">Gabrielle Essence Eau De Parfum</h1>
+      <p itemprop="description" class="description">
+        A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of
+        CHANEL.
+      </p>
+      <div itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="price">
+        <span itemprop="priceCurrency" content="USD" class="current-price">$</span>
+        <span itemprop="price" content="149.99" class="current-price">149.99</span>
+        <span class="old-price">$169.99</span>
+      </div>
+      <button type="button" class="button">
+        <svg width="15" height="16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path
+            d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z"
+            fill="currentColor"
+          />
+        </svg>
+        Add to Cart
+      </button>
+      <figure class="image">
+        <picture>
+          <img
+            itemprop="image"
+            srcset="./images/image-product-mobile.jpg 686w, ./images/image-product-desktop.jpg 600w"
+            sizes="(max-width: 580px) 686px, 600px"
+            src="./images/image-product-desktop.jpg"
+            alt="illustration of gabrielle essence eau de parfum"
+          />
+        </picture>
+      </figure>
+    </main>
+  </body>
+</html>
