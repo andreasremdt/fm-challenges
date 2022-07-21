@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Andreas Remdt" />
+    <meta name="description" content="This is a solution to the single-page design portfolio on Frontend Mentor" />
+
+    <title>Frontend Mentor | Single-page design portfolio</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="main-header container flex items-center space-between">
+      <img src="./images/logo.svg" alt="" aria-hidden="true" width="64" height="64" />
+
+      <a href="#" class="button -primary">Free Consultation</a>
+    </header>
+
+    <main>
+      <section class="hero-section container">
+        <h1 class="title text-center">Design solutions made easy</h1>
+        <p class="text text-center">
+          With over ten years of experience in various design disciplines, I'm your one-stop shop for your design needs.
+        </p>
+
+        <ul class="categories grid">
+          <li class="category">Graphic Design</li>
+          <li class="category">UI/UX</li>
+          <li class="category">Apps</li>
+          <li class="category">Photography</li>
+          <li class="category">Illustrations</li>
+          <li class="category">Motion Graphics</li>
+        </ul>
+      </section>
+
+      <section class="intro-section container grid">
+        <h2 class="title">I'm Amy, and I'd love to work on your next project</h2>
+        <p class="text">
+          I love working with others to create beautiful design solutions. I've designed everything from brand
+          illustrations to complete mobile apps. I'm also handy with a camera!
+        </p>
+
+        <a href="#" class="button -secondary">Free Consultation</a>
+
+        <figure class="image">
+          <img src="./images/image-amy.webp" alt="image of amy" width="890" height="890" />
+        </figure>
+      </section>
+
+      <section class="image-slider text-center">
+        <h2 class="title">My Work</h2>
+
+        <figure data-slider>
+          <img
+            src="./images/image-slide-1.jpg"
+            id="image-1"
+            class="image"
+            alt="work example #1"
+            width="540"
+            height="360"
+          />
+          <img
+            src="./images/image-slide-2.jpg"
+            id="image-2"
+            class="image"
+            alt="work example #2"
+            width="540"
+            height="360"
+          />
+          <img
+            src="./images/image-slide-3.jpg"
+            id="image-3"
+            class="image"
+            alt="work example #3"
+            width="540"
+            height="360"
+          />
+          <img
+            src="./images/image-slide-4.jpg"
+            id="image-4"
+            class="image"
+            alt="work example #4"
+            width="540"
+            height="360"
+          />
+          <img
+            src="./images/image-slide-5.jpg"
+            id="image-5"
+            class="image"
+            alt="work example #5"
+            width="540"
+            height="360"
+          />
+        </figure>
+
+        <div class="buttons flex justify-center">
+          <button type="button" class="button -primary" title="Show previous image" data-slider-control="prev">
+            <svg width="15" height="16" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#FFF" d="M8 0 0 8l8 8 1.687-1.687-5.121-5.12h10.241V6.807H4.566l5.121-5.12z" />
+            </svg>
+          </button>
+          <button type="button" class="button -primary" title="Show next image" data-slider-control="next">
+            <svg width="15" height="16" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#FFF" d="m6.808 16 8-8-8-8-1.687 1.687 5.121 5.12H.001v2.386h10.241l-5.121 5.12z" />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <div class="container">
+        <section class="cta-section grid">
+          <h2 class="title">Book a call with me</h2>
+          <p>
+            I'd love to have a chat to see how I can help you. The best first step is for us to discuss your project
+            during a free consultation. Then we can move forward from there.
+          </p>
+
+          <a href="#" class="button -secondary">Free Consultation</a>
+        </section>
+      </div>
+    </main>
+
+    <footer class="main-footer container flex items-center space-between">
+      <img src="./images/logo.svg" alt="" aria-hidden="true" width="64" height="64" />
+
+      <a href="#" class="button -primary">Free Consultation</a>
+    </footer>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
