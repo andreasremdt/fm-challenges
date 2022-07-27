@@ -1,0 +1,10 @@
+{
+  "name": "github-user-search-app",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./styles.css -o ./dist/styles.css --watch",
+    "build": "npx tailwindcss -i ./styles.css -o ./dist/styles.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.6"
+  }
+}

@@ -11,7 +11,8 @@
     "faq-accordion-card",
     "expenses-chart-component",
     "devjobs-web-app",
-    "in-browser-markdown-editor"
+    "in-browser-markdown-editor",
+    "github-user-search-app"
   ],
   "repository": {
     "type": "git",
