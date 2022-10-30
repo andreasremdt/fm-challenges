@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/card.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <section
+    class="bg-peach relative overflow-hidden text-white rounded-2xl h-[640px] flex flex-col items-start px-24 justify-center bg-[url(/graphics/circle.svg)] bg-no-repeat bg-right-bottom"
+  >
+    <figure class="absolute -right-24 -top-6">
+      <img src="/images/hero-phone.png" alt="frame - example application built by us" width="624" height="913" />
+    </figure>
+
+    <h1 class="text-xl max-w-[540px]">Award-winning custom designs and digital branding solutions</h1>
+    <p class="my-8 max-w-[540px]">
+      With over 10 years in the industry, we are experienced in creating fully responsive websites, app design, and
+      engaging brand experiences. Find out more about our services.
+    </p>
+    <a href="#" class="button button-dark">Learn more</a>
+  </section>
+
+  <section class="my-40 grid grid-cols-2 gap-8">
+    <Card href="/services/web-design" className="bg-[url(/images/web-design.jpg)] row-start-1 row-span-2"
+      >Web Design</Card
+    >
+    <Card href="/services/app-design" className="bg-[url(/images/app-design.jpg)]">App Design</Card>
+    <Card href="/services/graphic-design" className="bg-[url(/images/graphic-design.jpg)]">Graphic Design</Card>
+  </section>
+</Layout>
