@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Andreas Remdt" />
+    <meta name="description" content="This is a solution to the news homepage challenge on Frontend Mentor" />
+
+    <title>Frontend Mentor | News homepage</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/classes.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/main-header.css" />
+    <link rel="stylesheet" href="./css/main-navigation.css" />
+    <link rel="stylesheet" href="./css/hero-article.css" />
+    <link rel="stylesheet" href="./css/main-sidebar.css" />
+    <link rel="stylesheet" href="./css/bottom-articles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <a href="#content" class="skip-to-content">Skip to content</a>
+
+      <header class="main-header">
+        <img src="./images/logo.svg" width="65" height="40" alt="Logo of W." />
+
+        <button
+          type="button"
+          data-action="toggle-navigation"
+          class="menu-toggle"
+          aria-label="Show mobile navigation"
+          aria-live="polite"
+          aria-controls="navigation"
+          aria-expanded="false"
+        ></button>
+
+        <nav class="main-navigation" id="navigation" aria-labelledby="navigation-title" data-target="navigation">
+          <h2 id="navigation-title" class="sr-only">Navigation</h2>
+
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">New</a></li>
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Trending</a></li>
+            <li><a href="#">Categories</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="content" class="main-layout">
+        <article class="hero-article" itemscope itemtype="https://schema.org/NewsArticle">
+          <figure>
+            <img
+              itemprop="image"
+              srcset="./images/image-web-3-desktop.jpg 1460w, ./images/image-web-3-mobile.jpg 686w"
+              sizes="(max-width: 600px) 686px, 1460px"
+              src="./images/image-web-3-desktop.jpg"
+              width="1460"
+              height="600"
+              alt="Image of various colorful 3d shapes and figures"
+            />
+          </figure>
+
+          <h1 class="h1" itemprop="name">The Bright Future of Web 3.0?</h1>
+          <p itemprop="abstract">
+            We dive into the next evolution of the web that claims to put the power of the platforms back into the hands
+            of the people. But is it really fulfilling its promise?
+          </p>
+          <a href="#" class="button" itemprop="url">Read more</a>
+        </article>
+
+        <aside class="main-sidebar">
+          <h2>New</h2>
+
+          <article itemscope itemtype="https://schema.org/NewsArticle">
+            <a href="#" itemprop="url" aria-label="Go to article 'Hydrogen VS Electric Cars'">
+              <h3 itemprop="name" class="h2">Hydrogen VS Electric Cars</h3>
+              <p itemprop="abstract">Will hydrogen-fueled cars ever catch up to EVs?</p>
+            </a>
+          </article>
+          <article itemscope itemtype="https://schema.org/NewsArticle">
+            <a href="#" itemprop="url" aria-label="Go to article 'The Downsides of AI Artistry'">
+              <h3 itemprop="name" class="h2">The Downsides of AI Artistry</h3>
+              <p itemprop="abstract">What are the possible adverse effects of on-demand AI image generation?</p>
+            </a>
+          </article>
+          <article itemscope itemtype="https://schema.org/NewsArticle">
+            <a href="#" itemprop="url" aria-label="Go to article 'Is VC Funding Drying Up?'">
+              <h3 itemprop="name" class="h2">Is VC Funding Drying Up?</h3>
+              <p itemprop="abstract">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+            </a>
+          </article>
+        </aside>
+
+        <div class="bottom-articles">
+          <article itemscope itemtype="https://schema.org/NewsArticle">
+            <a href="#" itemprop="url" aria-label="Go to article 'Reviving Retro PCs'">
+              <figure>
+                <img
+                  itemprop="image"
+                  src="./images/image-retro-pcs.jpg"
+                  width="200"
+                  height="254"
+                  alt="Image of a retro computer"
+                />
+              </figure>
+              <div>
+                <h2 itemprop="name" class="h3">Reviving Retro PCs</h2>
+                <p itemprop="abstract">What happens when old PCs are given modern upgrades?</p>
+              </div>
+            </a>
+          </article>
+          <article itemscope itemtype="https://schema.org/NewsArticle">
+            <a href="#" itemprop="url" aria-label="Go to article 'Top 10 Laptops of 2022'">
+              <figure>
+                <img
+                  itemprop="image"
+                  src="./images/image-top-laptops.jpg"
+                  width="200"
+                  height="254"
+                  alt="Image of a laptop keyboard with backlight"
+                />
+              </figure>
+              <div>
+                <h2 itemprop="name" class="h3">Top 10 Laptops of 2022</h2>
+                <p itemprop="abstract">Our best picks for various needs and budgets.</p>
+              </div>
+            </a>
+          </article>
+          <article itemscope itemtype="https://schema.org/NewsArticle">
+            <a href="#" itemprop="url" aria-label="Go to article 'The Growth of Gaming'">
+              <figure>
+                <img
+                  itemprop="image"
+                  src="./images/image-gaming-growth.jpg"
+                  width="200"
+                  height="254"
+                  alt="Image of a gaming controller hovering over an open hand"
+                />
+              </figure>
+              <div>
+                <h2 itemprop="name" class="h3">The Growth of Gaming</h2>
+                <p itemprop="abstract">How the pandemic has sparked fresh opportunities.</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </main>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

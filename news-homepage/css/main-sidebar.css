@@ -1,0 +1,50 @@
+.main-sidebar {
+  padding: 2rem 1.5rem;
+
+  background-color: hsl(var(--clr-dark-blue));
+}
+
+@media (width < 40rem) {
+  .main-sidebar {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+.main-sidebar h2 {
+  margin-bottom: 2.2rem;
+
+  font-weight: 700;
+  font-size: 40px;
+
+  color: hsl(var(--clr-orange));
+}
+
+.main-sidebar a {
+  display: block;
+
+  color: hsl(var(--clr-silver));
+}
+
+.main-sidebar article:not(:last-child) {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+
+  border-bottom: 1px solid hsl(var(--clr-metal));
+}
+
+.main-sidebar h3 {
+  margin-bottom: 0.6rem;
+
+  color: hsl(var(--clr-white));
+
+  transition: color 0.1s linear;
+}
+
+.main-sidebar a:where(:hover, :focus-visible) h3 {
+  color: hsl(var(--clr-orange));
+}
+
+.main-sidebar a:focus-visible {
+  outline: 2px solid hsl(var(--clr-orange));
+  outline-offset: 5px;
+}

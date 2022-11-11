@@ -1,0 +1,35 @@
+.main-layout {
+  display: grid;
+  gap: 4.375rem 1.875rem;
+}
+
+@media (width > 55rem) {
+  .main-layout {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "hero hero sidebar"
+      "articles articles articles";
+  }
+
+  .hero-article {
+    grid-area: hero;
+  }
+
+  .main-sidebar {
+    grid-area: sidebar;
+  }
+
+  .bottom-articles {
+    grid-area: articles;
+  }
+}
+
+@media (width < 55rem) {
+  .main-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero"
+      "sidebar"
+      "articles";
+  }
+}

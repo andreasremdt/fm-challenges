@@ -1,0 +1,12 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 1.75rem 2rem;
+}
+
+@media (width > 40rem) {
+  .main-header {
+    margin-block: 5.5rem 3.5rem;
+  }
+}
