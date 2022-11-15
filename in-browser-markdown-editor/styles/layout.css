@@ -1,0 +1,32 @@
+body {
+  display: flex;
+  overflow: hidden;
+}
+
+main {
+  display: grid;
+  grid-template-columns: var(--width, 1fr) 1fr;
+  grid-template-rows: auto 1fr;
+  width: 100%;
+  transition: transform 0.2s ease-out;
+  z-index: 1;
+}
+
+main:where([data-preview-enabled="true"]) {
+  --width: 0;
+}
+
+main:where([data-pushed="true"]) {
+  transform: translateX(var(--navigation-width));
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 72px);
+  overflow: hidden;
+}
+
+.section:first-of-type {
+  border-right: 1px solid var(--clr-gray-200);
+}

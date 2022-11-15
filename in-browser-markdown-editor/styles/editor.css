@@ -1,0 +1,11 @@
+.text-editor {
+  border: unset;
+  resize: none;
+  width: 100%;
+  flex: 1;
+  color: var(--clr-gray-600);
+  outline: none;
+  padding: 0.5rem 1rem;
+  font-family: var(--ff-mono);
+  overflow-y: auto;
+}

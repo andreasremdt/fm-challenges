@@ -1,0 +1,32 @@
+.button {
+  border: unset;
+  height: 40px;
+  padding-inline: 16px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8px;
+  transition: background-color 0.1s linear, color 0.1s linear;
+  font: var(--fs-h6) var(--ff-sans);
+  cursor: pointer;
+  outline: none;
+}
+
+.button:where(.is-primary) {
+  color: white;
+  background-color: var(--clr-primary-400);
+}
+
+.button:where(.is-primary):where(:hover, :focus-visible) {
+  background-color: var(--clr-primary-300);
+}
+
+.button:where(.is-transparent) {
+  color: var(--clr-gray-400);
+  background-color: transparent;
+}
+
+.button:where(.is-transparent):where(:hover, :focus-visible) {
+  color: var(--clr-primary-400);
+}

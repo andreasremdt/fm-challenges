@@ -11,9 +11,142 @@
 
     <title>Frontend Mentor | In-browser markdown editor</title>
 
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
-    <h1>Hello World</h1>
+    <nav class="main-navigation" data-navigation>
+      <h1 class="title">My Documents</h1>
+
+      <button type="button" title="Show Menu" class="toggle" data-action="toggle-navigation">
+        <svg width="30" height="18" aria-hidden="true">
+          <use href="./icons/symbol-defs.svg#open-menu" />
+        </svg>
+      </button>
+      <button type="button" class="button is-primary">+ New Document</button>
+
+      <ul class="list">
+        <li>
+          <document-entry date="Sun, 30 Oct 2022 13:16:20 GMT" title="untitled-document-.md" href="/"></document-entry>
+        </li>
+        <li>
+          <document-entry date="Sun, 30 Oct 2022 13:16:20 GMT" title="welcome.md" href="/"></document-entry>
+        </li>
+        <li>
+          <document-entry date="Sun, 30 Oct 2022 13:16:20 GMT" title="untitled-document-.md" href="/"></document-entry>
+        </li>
+        <li>
+          <document-entry date="Sun, 30 Oct 2022 13:16:20 GMT" title="welcome.md" href="/"></document-entry>
+        </li>
+        <li>
+          <document-entry date="Sun, 30 Oct 2022 13:16:20 GMT" title="untitled-document-.md" href="/"></document-entry>
+        </li>
+        <li>
+          <document-entry date="Sun, 30 Oct 2022 13:16:20 GMT" title="welcome.md" href="/"></document-entry>
+        </li>
+      </ul>
+
+      <dark-mode-toggle checked></dark-mode-toggle>
+    </nav>
+
+    <main data-main>
+      <header class="main-header">
+        <svg width="130" height="12" aria-label="Application Logo" role="img">
+          <use href="./icons/symbol-defs.svg#logo" />
+        </svg>
+
+        <document-entry class="document" date="01 April 2022" title="welcome.md"></document-entry>
+
+        <div class="buttons">
+          <button type="button" title="Delete Document" class="button is-transparent" data-action="delete">
+            <svg width="18" height="20" aria-hidden="true">
+              <use href="./icons/symbol-defs.svg#delete" />
+            </svg>
+          </button>
+          <button type="button" class="button is-primary">
+            <svg width="17" height="17" aria-hidden="true">
+              <use href="./icons/symbol-defs.svg#save" />
+            </svg>
+            <span>Save Changes</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="section">
+        <header class="section-header">
+          <h2 class="title">Markdown</h2>
+        </header>
+
+        <textarea placeholder="Start writing your markdown here" class="text-editor" data-editor>
+# Welcome to Markdown
+
+Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
+
+## How to use this?
+
+1. Write markdown in the markdown editor window
+2. See the rendered markdown in the preview window
+
+### Features
+
+- Create headings, paragraphs, links, blockquotes, inline-code, code blocks, and lists
+- Name and save the document to access again later
+- Choose between Light or Dark mode depending on your preference
+
+> This is an example of a blockquote. If you would like to learn more about markdown syntax, you can visit this [markdown cheatsheet](https://www.markdownguide.org/cheat-sheet/).
+
+#### Headings
+
+To create a heading, add the hash sign (#) before the heading. The number of number signs you use should correspond to the heading level. You'll see in this guide that we've used all six heading levels (not necessarily in the correct way you should use headings!) to illustrate how they should look.
+
+##### Lists
+
+You can see examples of ordered and unordered lists above.
+
+###### Code Blocks
+
+This markdown editor allows for inline-code snippets, like this: `<p>I'm inline</p>`. It also allows for larger code blocks like this:
+
+```
+<main>
+  <h1>This is a larger code block</h1>
+</main>
+```
+        </textarea>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <h2 class="title">Preview</h2>
+
+          <button
+            type="button"
+            title="Show Preview"
+            class="button is-transparent"
+            data-action="toggle-preview"
+            aria-live="polite"
+          >
+            <svg width="16" height="15" aria-hidden="true">
+              <use href="./icons/symbol-defs.svg#show-preview" />
+            </svg>
+          </button>
+        </header>
+
+        <html-preview class="html-preview" data-preview></html-preview>
+      </section>
+    </main>
+
+    <dialog data-dialog class="delete-dialog">
+      <form method="dialog">
+        <h2 class="title">Delete this document?</h2>
+        <p>
+          Are you sure you want to delete the ‘welcome.md’ document and its contents? This action cannot be reversed.
+        </p>
+        <button class="button is-primary" value="confirm">Confirm & Delete</button>
+      </form>
+    </dialog>
+
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>

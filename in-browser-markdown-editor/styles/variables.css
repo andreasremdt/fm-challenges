@@ -1,0 +1,39 @@
+:root {
+  --clr-primary-400: hsl(13, 75%, 58%);
+  --clr-primary-300: hsl(21, 86%, 68%);
+  --clr-gray-900: hsl(225, 9%, 9%);
+  --clr-gray-800: hsl(216, 8%, 12%);
+  --clr-gray-700: hsl(220, 7%, 18%);
+  --clr-gray-600: hsl(216, 9%, 23%);
+  --clr-gray-500: hsl(216, 8%, 38%);
+  --clr-gray-400: hsl(216, 4%, 51%);
+  --clr-gray-300: hsl(222, 9%, 78%);
+  --clr-gray-200: hsl(0, 0%, 90%);
+  --clr-gray-100: hsl(0, 0%, 96%);
+
+  --fs-h1: 32px;
+  --fs-h2: 28px;
+  --fs-h3: 24px;
+  --fs-h4: 20px;
+  --fs-h5: 16px;
+  --fs-h6: 15px;
+  --fs-body: 14px;
+  --fs-tiny: 13px;
+
+  --ff-serif: Roboto Slab, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --ff-sans: Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --ff-mono: Roboto Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+
+  --fw-bold: 700;
+  --fw-medium: 500;
+  --fw-regular: 400;
+  --fw-light: 300;
+
+  --lg-heading: 1.3;
+  --lh-body: 1.7;
+
+  --header-height: 4.5rem;
+  --navigation-width: 15.625rem;
+}
