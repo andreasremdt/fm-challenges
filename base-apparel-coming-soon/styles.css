@@ -1,0 +1,268 @@
+/**************************************/
+/* VARIABLES                          */
+/**************************************/
+:root {
+  --clr-soft-red: 0, 93%, 68%;
+  --clr-desaturated-red: 0, 36%, 70%;
+  --clr-dark-red: 0, 6%, 24%;
+  --clr-white: 0, 0%, 100%;
+  --clr-gradient: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  --clr-gradient-bg: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+
+/**************************************/
+/* WEB FONTS                          */
+/**************************************/
+@font-face {
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: 300;
+  src: local("Josefin Sans Light"), local("JosefinSans-Light"), url(./fonts/josefin-sans-light.woff) format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Josefin Sans Regular"), local("JosefinSans-Regular"),
+    url(./fonts/josefin-sans-regular.woff) format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: 600;
+  src: local("Josefin Sans SemiBold"), local("JosefinSans-SemiBold"),
+    url(./fonts/josefin-sans-semibold.woff) format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+/**************************************/
+/* CSS RESET                          */
+/**************************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+p {
+  margin: unset;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-block-size: 100vh;
+  text-rendering: optimizeSpeed;
+  font: clamp(14px, 7vw, 16px) / 1.75 "Josefin Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+figure {
+  margin: unset;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button {
+  font: inherit;
+  outline: none;
+  appearance: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/**************************************/
+/* TYPOGRAPHY                         */
+/**************************************/
+h1 {
+  font-size: clamp(40px, 4vw, 64px);
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  color: hsl(var(--clr-desaturated-red));
+  letter-spacing: 17px;
+}
+
+h1 > span {
+  font-weight: 600;
+  color: hsl(var(--clr-dark-red));
+}
+
+p {
+  color: hsl(var(--clr-desaturated-red));
+  margin-bottom: 2.5rem;
+}
+
+/**************************************/
+/* LAYOUT                             */
+/**************************************/
+main {
+  display: flex;
+}
+
+figure > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+form {
+  --element-size: 3.5rem;
+  --button-width: 6.25rem;
+
+  position: relative;
+}
+
+@media (width > 40rem) {
+  .container {
+    min-block-size: 100vh;
+    flex: 1 1 55%;
+    background-image: url(./images/bg-pattern-desktop.svg), var(--clr-gradient-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .inner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 28.125rem;
+    margin-inline: auto;
+    width: 100%;
+    height: 100%;
+    padding-inline: 2rem;
+    background: transparent url(./images/logo.svg) no-repeat 0 75px;
+  }
+
+  figure {
+    flex: 1 1 45%;
+    min-block-size: 100vh;
+  }
+}
+
+@media (width < 40rem) {
+  main {
+    flex-direction: column-reverse;
+    padding-top: 5.25rem;
+    background: transparent url(./images/logo.svg) no-repeat 2rem 1.5625rem;
+    min-block-size: 100vh;
+  }
+
+  .container {
+    background-image: var(--clr-gradient-bg);
+    flex: 1;
+  }
+
+  .inner {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  form {
+    --element-size: 3rem;
+    --button-width: 4rem;
+  }
+}
+
+/**************************************/
+/* FORM ELEMENTS                      */
+/**************************************/
+input {
+  background-color: transparent;
+  height: var(--element-size);
+  border-radius: var(--element-size);
+  border: 1px solid hsla(var(--clr-desaturated-red), 0.5);
+  width: 100%;
+  padding-inline: 2rem calc(2rem + var(--button-width));
+  color: hsl(var(--clr-dark-red));
+  transition: border-color 0.25s ease;
+}
+
+input:is(:hover, :focus-visible) {
+  border-color: hsl(var(--clr-desaturated-red));
+}
+
+input[aria-invalid="true"] {
+  outline: 2px solid hsl(var(--clr-soft-red));
+  outline-offset: -2px;
+  border-color: hsl(var(--clr-soft-red));
+  background: url(./images/icon-error.svg) no-repeat calc(100% - var(--button-width) - 1rem) center;
+  padding-right: calc(3rem + var(--button-width));
+}
+
+::placeholder {
+  color: hsla(var(--clr-desaturated-red), 0.5);
+  opacity: 1;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: var(--element-size);
+  border-radius: var(--element-size);
+  border: unset;
+  width: var(--button-width);
+  background: var(--clr-gradient);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 0.9375rem 1.25rem hsla(0, 44%, 60%, 0.25);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border-radius: inherit;
+  background-color: hsla(var(--clr-white), 0.5);
+  box-shadow: 0 0.9375rem 1.25rem hsla(0, 44%, 60%, 0.25);
+}
+
+button:is(:hover, :focus-visible)::before {
+  opacity: 1;
+}
+
+.error-text {
+  color: hsl(var(--clr-soft-red));
+  font-size: 13px;
+  padding-inline: 2rem;
+  margin-block: 0.5rem;
+  position: absolute;
+  top: 100%;
+}

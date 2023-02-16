@@ -1,0 +1,10 @@
+{
+  "name": "base-apparel-coming-soon",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}

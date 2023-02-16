@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Andreas Remdt" />
+    <meta
+      name="description"
+      content="This is a solution to the base apparel coming soon challenge on Frontend Mentor"
+    />
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="inner">
+          <h1>We're <span>coming soon</span></h1>
+
+          <p>
+            Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay
+            up-to-date with announcements and our launch deals.
+          </p>
+
+          <form data-form>
+            <input type="email" name="email" placeholder="Email Address" required data-validate />
+            <button type="submit" aria-label="Submit">
+              <svg width="12" height="20">
+                <path fill="none" stroke="#FFF" stroke-width="2" d="M1 1l8.836 8.836L1 18.671" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      <figure>
+        <img
+          srcset="./images/hero-desktop.jpg 610w, ./images/hero-mobile.jpg 375w"
+          sizes="(max-width: 40rem) 375px, 610px"
+          src="./images/hero-desktop.jpg"
+          alt="woman in orange shirt looking into the camera"
+        />
+      </figure>
+    </main>
+
+    <script src="./dist/script.js"></script>
+  </body>
+</html>
