@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Andreas Remdt" />
+    <meta
+      name="description"
+      content="This is a solution to the interactive rating component challenge on Frontend Mentor"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <div data-wrapper aria-live="polite">
+        <figure aria-hidden="true">
+          <img src="./images/icon-star.svg" alt="" width="16" height="16" />
+        </figure>
+
+        <h1>How did we do?</h1>
+        <p>
+          Please let us know how we did with your support request. All feedback is appreciated to help us improve our
+          offering!
+        </p>
+
+        <form data-form>
+          <div class="rating-group">
+            <label class="radio-button">
+              <input type="radio" value="1" name="rating" class="sr-only" />
+              <span class="label">1 <span class="sr-only">star</span></span>
+            </label>
+            <label class="radio-button">
+              <input type="radio" value="2" name="rating" class="sr-only" />
+              <span class="label">2 <span class="sr-only">stars</span></span>
+            </label>
+            <label class="radio-button">
+              <input type="radio" value="3" name="rating" class="sr-only" />
+              <span class="label">3 <span class="sr-only">stars</span></span>
+            </label>
+            <label class="radio-button">
+              <input type="radio" value="4" name="rating" class="sr-only" />
+              <span class="label">4 <span class="sr-only">stars</span></span>
+            </label>
+            <label class="radio-button">
+              <input type="radio" value="5" name="rating" class="sr-only" />
+              <span class="label">5 <span class="sr-only">stars</span></span>
+            </label>
+          </div>
+
+          <button type="submit" class="button">Submit</button>
+        </form>
+      </div>
+
+      <template data-template>
+        <img src="./images/illustration-thank-you.svg" alt="" width="162" height="108" class="illustration" />
+        <p class="rating-result">You selected {{ result }} out of 5</p>
+        <h1 class="text-center">Thank you!</h1>
+        <p class="text-center">
+          We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in
+          touch!
+        </p>
+      </template>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
