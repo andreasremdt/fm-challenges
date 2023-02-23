@@ -1,19 +1,20 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import { defineConfig } from 'vite';
-import solidPlugin from 'vite-plugin-solid';
+import { defineConfig } from "vite";
+import solidPlugin from "vite-plugin-solid";
 
 export default defineConfig({
+  base: "/dictionary-web-app/dist/",
   plugins: [solidPlugin()],
   server: {
     port: 3000,
   },
   test: {
-    environment: 'jsdom',
+    environment: "jsdom",
     globals: true,
     transformMode: { web: [/\.[jt]sx?$/] },
-    setupFiles: ['node_modules/@testing-library/jest-dom/extend-expect.js'],
+    setupFiles: ["node_modules/@testing-library/jest-dom/extend-expect.js"],
     // otherwise, solid would be loaded twice:
     deps: { registerNodeLoader: true },
     // if you have few tests, try commenting one
@@ -22,9 +23,9 @@ export default defineConfig({
     isolate: false,
   },
   build: {
-    target: 'esnext',
+    target: "esnext",
   },
   resolve: {
-    conditions: ['development', 'browser'],
+    conditions: ["development", "browser"],
   },
 });
