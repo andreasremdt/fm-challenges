@@ -1,0 +1,56 @@
+.button {
+  --bg-opacity: 0.25;
+  --arrow-color: var(--clr-purple);
+  --size: clamp(3rem, 10vw, 4.6875rem);
+
+  width: var(--size);
+  border-radius: var(--size);
+  aspect-ratio: 1;
+  color: var(--arrow-color);
+  border: unset;
+  position: relative;
+  appearance: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: unset;
+  isolation: isolate;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--clr-purple);
+  opacity: var(--bg-opacity);
+  border-radius: var(--size);
+}
+
+.button:is(:hover, :focus-visible) {
+  --bg-opacity: 1;
+  --arrow-color: var(--clr-white);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--clr-purple);
+  outline-offset: 2px;
+}
+
+.button svg {
+  --size: clamp(16px, 5vw, 32px);
+
+  width: var(--size);
+  height: var(--size);
+}
+
+.loading {
+  animation: spin 2s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}

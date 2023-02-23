@@ -13,7 +13,8 @@
     "devjobs-web-app",
     "in-browser-markdown-editor",
     "github-user-search-app",
-    "base-apparel-coming-soon"
+    "base-apparel-coming-soon",
+    "dictionary-web-app"
   ],
   "repository": {
     "type": "git",

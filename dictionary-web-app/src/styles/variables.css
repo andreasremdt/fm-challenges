@@ -1,0 +1,48 @@
+:root {
+  --clr-gray-700: hsl(0, 0%, 2%);
+  --clr-gray-600: hsl(0, 0%, 12%);
+  --clr-gray-500: hsl(0, 0%, 18%);
+  --clr-gray-400: hsl(0, 0%, 23%);
+  --clr-gray-300: hsl(0, 0%, 46%);
+  --clr-gray-200: hsl(0, 0%, 91%);
+  --clr-gray-100: hsl(0, 0%, 96%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-purple: hsl(274, 82%, 60%);
+  --clr-red: hsl(0, 100%, 66%);
+
+  --ff-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --ff-serif: Lora, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --ff-mono: Inconsolata, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
+:root[data-theme="light"] {
+  --background-color: var(--clr-white);
+  --text-color: var(--clr-gray-500);
+  --input-background: var(--clr-gray-100);
+  --menu-background: var(--clr-white);
+  --menu-shadow-color: hsla(0, 0%, 0%, 0.1);
+  --footer-link-color: var(--clr-gray-500);
+}
+
+:root[data-theme="dark"] {
+  --background-color: var(--clr-gray-700);
+  --text-color: var(--clr-white);
+  --input-background: var(--clr-gray-600);
+  --menu-background: var(--clr-gray-600);
+  --menu-shadow-color: var(--clr-purple);
+  --footer-link-color: var(--clr-white);
+}
+
+:root[data-font="sans"] {
+  --font-family: var(--ff-sans);
+}
+
+:root[data-font="serif"] {
+  --font-family: var(--ff-serif);
+}
+
+:root[data-font="mono"] {
+  --font-family: var(--ff-mono);
+}

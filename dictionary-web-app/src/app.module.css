@@ -1,0 +1,7 @@
+.container {
+  --spacing: clamp(1.5rem, 5vw, 2.5rem);
+
+  max-width: 46.25rem;
+  margin-inline: auto;
+  width: calc(100% - (var(--spacing) * 2));
+}

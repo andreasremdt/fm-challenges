@@ -1,0 +1,17 @@
+.container {
+  text-align: center;
+  margin-top: clamp(4rem, 15vw, 8.125rem);
+}
+
+.icon {
+  font-size: 64px;
+}
+
+.title {
+  font-size: clamp(16px, 4vw, 20px);
+  margin-block: 2.75rem 1.5rem;
+}
+
+.text {
+  color: var(--clr-gray-300);
+}

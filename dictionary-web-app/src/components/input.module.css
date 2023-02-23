@@ -1,0 +1,47 @@
+.container {
+  --height: clamp(3rem, 12vw, 4rem);
+
+  position: relative;
+}
+
+.input {
+  background-color: var(--input-background);
+  border: 1px solid var(--input-background);
+  appearance: none;
+  font-weight: bold;
+  border-radius: 1rem;
+  height: var(--height);
+  padding-inline: 1.5rem;
+  font-size: clamp(16px, 3vw, 20px);
+  width: 100%;
+  color: inherit;
+}
+
+.input::placeholder {
+  opacity: 0.25;
+}
+
+.input:focus-visible {
+  border-color: var(--clr-purple);
+  outline: none;
+}
+
+.input:is(.error) {
+  border-color: var(--clr-red);
+}
+
+.helper-text {
+  color: var(--clr-red);
+  margin-top: 0.3125rem;
+}
+
+.adornment {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: var(--height);
+  color: var(--clr-purple);
+  display: flex;
+  padding-inline: 1.5rem;
+  align-items: center;
+}

@@ -1,0 +1,16 @@
+.header {
+  margin-block: clamp(24px, 8vw, 2.8125rem) clamp(32px, 8vw, 2.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 64px);
+  margin-bottom: clamp(0.5rem, 1vw, 0.625rem);
+}
+
+.phonetics {
+  color: var(--clr-purple);
+  font-size: clamp(18px, 3vw, 24px);
+}

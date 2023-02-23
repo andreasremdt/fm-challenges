@@ -1,0 +1,92 @@
+.h2 {
+  font-size: clamp(18px, 4vw, 24px);
+  font-style: italic;
+  margin-block: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.h2::after {
+  content: "";
+  height: 1px;
+  background-color: var(--clr-gray-200);
+  display: block;
+  width: 100%;
+  margin-left: 1.25rem;
+}
+
+.h3 {
+  font-size: clamp(16px, 3vw, 20px);
+  color: var(--clr-gray-300);
+  font-weight: normal;
+  margin-block: 1.5625rem;
+}
+
+.list {
+  margin-block: 0 2.5rem;
+  padding-left: clamp(1rem, 3vw, 2rem);
+}
+
+.item {
+  padding-left: clamp(0.5rem, 1vw, 1.25rem);
+}
+
+.item:not(:last-child) {
+  margin-bottom: 0.825rem;
+}
+
+.item::marker {
+  color: var(--clr-purple);
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  margin-block: 2.5rem;
+}
+
+.section .h3 {
+  margin: 0 1.25rem 0 0;
+}
+
+.keyword-list {
+  list-style: none;
+  margin: unset;
+  padding: unset;
+  display: flex;
+  column-gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.word-button {
+  border: unset;
+  background-color: transparent;
+  color: var(--clr-purple);
+  font-weight: bold;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 0.25rem;
+  padding: unset;
+}
+
+.word-button:hover {
+  text-decoration: underline;
+}
+
+.word-button:focus-visible {
+  outline: 2px solid var(--clr-purple);
+}
+
+.example {
+  display: block;
+  margin-top: 0.625rem;
+  color: var(--clr-gray-300);
+}
+
+.example::before {
+  content: open-quote;
+}
+
+.example::after {
+  content: close-quote;
+}

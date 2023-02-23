@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  align-items: center;
+  column-gap: 1.25rem;
+}
+
+.switch {
+  --height: 1.25rem;
+
+  width: 2.5rem;
+  height: var(--height);
+  border-radius: var(--height);
+  background-color: var(--color, var(--clr-gray-300));
+  appearance: none;
+  border: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.switch:is(.active, :hover) {
+  --color: var(--clr-purple);
+}
+
+.switch:focus-visible {
+  outline: 2px solid var(--clr-purple);
+  outline-offset: 1px;
+}
+
+.knob {
+  --size: 0.875rem;
+
+  display: block;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: var(--size);
+  background-color: var(--clr-white);
+}
+
+.knob:is(.active) {
+  translate: 1.125rem;
+}
