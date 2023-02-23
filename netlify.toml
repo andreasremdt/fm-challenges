@@ -119,4 +119,4 @@
   for = "/dictionary-web-app/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"
-    Content-Security-Policy = "default-src 'self' https://api.dictionaryapi.dev/; style-src 'self'; form-action 'none'; script-src 'self'; connect-src https://api.dictionaryapi.dev/ 'self'; img-src 'self' data:; base-uri 'self'; frame-ancestors 'self'; object-src 'none'; require-trusted-types-for 'script';"
+    Content-Security-Policy = "default-src 'self' https://api.dictionaryapi.dev/; style-src 'self'; form-action 'none'; script-src 'self'; connect-src https://api.dictionaryapi.dev/ 'self'; img-src 'self' data:; base-uri 'self'; frame-ancestors 'self'; object-src 'none';"

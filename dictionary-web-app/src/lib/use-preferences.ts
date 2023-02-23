@@ -34,7 +34,7 @@ const setPreferencesInHTML = ({ darkModeEnabled, fontFamily }: { darkModeEnabled
 };
 
 const usePreferences = () => {
-  const defaultFontFamily = (localStorage.getItem(FONT_FAMILY_KEY) as FontKey) || "sans";
+  const defaultFontFamily = (localStorage.getItem(FONT_FAMILY_KEY) as FontKey) || "serif";
   const defaultDarkMode = isDarkModePreferredByDefault();
 
   const [fontFamily, setFontFamily] = createSignal<FontKey>(defaultFontFamily);
