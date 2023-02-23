@@ -50,7 +50,7 @@ function handleInput(event: Event) {
   }
 }
 
-form.setAttribute("novalidate", "true");
+form.setAttribute("novalidate", "novalidate");
 form.addEventListener("submit", handleSubmit);
 input.addEventListener("blur", handleBlur);
 input.addEventListener("input", handleInput);
