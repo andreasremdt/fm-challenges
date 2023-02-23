@@ -14,28 +14,26 @@ type WordDisplayProps = {
 };
 
 const WordDisplay: Component<WordDisplayProps> = (props) => (
-  <main>
-    <For each={props.definition}>
-      {(definition) => (
-        <section>
-          <header class={styles.header}>
-            <div>
-              <h1 class={styles.title}>{definition.word}</h1>
-              <p class={styles.phonetics}>{definition.phonetic}</p>
-            </div>
+  <For each={props.definition}>
+    {(definition) => (
+      <section>
+        <header class={styles.header}>
+          <div>
+            <h1 class={styles.title}>{definition.word}</h1>
+            <p class={styles.phonetics}>{definition.phonetic}</p>
+          </div>
 
-            <PlayAudio definition={definition} />
-          </header>
+          <PlayAudio definition={definition} />
+        </header>
 
-          <For each={definition.meanings}>
-            {(meaning) => <MeaningDisplay meaning={meaning} onSelectWord={props.onSelectWord} />}
-          </For>
+        <For each={definition.meanings}>
+          {(meaning) => <MeaningDisplay meaning={meaning} onSelectWord={props.onSelectWord} />}
+        </For>
 
-          <Footer urls={definition.sourceUrls} />
-        </section>
-      )}
-    </For>
-  </main>
+        <Footer urls={definition.sourceUrls} />
+      </section>
+    )}
+  </For>
 );
 
 export default WordDisplay;

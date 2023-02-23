@@ -18,7 +18,7 @@ const StateDisplay: Component<StateDisplayProps> = (props) => {
           {props.emoji}
         </span>
       </Show>
-      <h2 class={styles.title}>{props.title}</h2>
+      <h1 class={styles.title}>{props.title}</h1>
       <Show when={props.message}>
         <p class={styles.text}>{props.message}</p>
       </Show>

@@ -115,7 +115,7 @@ const Trigger: ParentComponent<JSX.HTMLAttributes<HTMLButtonElement>> = (props) 
         type="button"
         aria-haspopup="true"
         aria-expanded={context!.open()}
-        aria-controls={context!.menuId}
+        aria-controls={context!.open() ? context!.menuId : undefined}
         id={context!.triggerId}
         onClick={() => context!.setOpen(!context!.open())}
         classList={{ [styles.trigger]: true, [local.class as string]: Boolean(local.class) }}

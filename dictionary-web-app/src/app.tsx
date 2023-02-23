@@ -10,11 +10,11 @@ import styles from "./app.module.css";
 const WordDisplay = lazy(() => import("./components/word-display"));
 
 const App: Component = () => {
-  const [word, setWord] = createSignal<string>("keyboard");
+  const [word, setWord] = createSignal<string>("");
   const [definition] = createResource(word, fetchDefinition);
 
   return (
-    <div class={styles.container}>
+    <main class={styles.container}>
       <Header />
       <SearchBar word={word} onSubmit={setWord} />
 
@@ -47,7 +47,7 @@ const App: Component = () => {
           <WordDisplay definition={definition()!.data!} onSelectWord={setWord} />
         </Match>
       </Switch>
-    </div>
+    </main>
   );
 };
 
