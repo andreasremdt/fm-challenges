@@ -87,24 +87,3 @@ p {
   color: var(--color-blue);
   margin: 1.075em;
 }
-
-/* --------------------------------------------- */
-/* ATTRIBUTION                                   */
-/* --------------------------------------------- */
-
-.attribution {
-  position: fixed;
-  bottom: 1.075em;
-  margin-inline: 1.075em;
-  text-align: center;
-}
-
-.attribution a {
-  color: hsl(var(--color-dark-blue));
-}
-
-.attribution a:hover,
-.attribution a:focus {
-  color: hsl(var(--color-blue));
-  outline: none;
-}

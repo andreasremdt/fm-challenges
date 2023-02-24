@@ -189,12 +189,3 @@ p {
 .nft-preview > .footer > .creator {
   margin-block: 1rem;
 }
-
-/* --------------------------------------------- */
-/* ATTRIBUTION                                   */
-/* --------------------------------------------- */
-
-.attribution {
-  margin-inline: 1.5rem;
-  text-align: center;
-}
