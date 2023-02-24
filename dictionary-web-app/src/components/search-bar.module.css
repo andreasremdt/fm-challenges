@@ -1,0 +1,21 @@
+.button {
+  background-color: transparent;
+  border: none;
+  appearance: none;
+  height: 100%;
+  aspect-ratio: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.button:hover {
+  background-color: var(--clr-gray-200);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--clr-purple);
+  outline-offset: -2px;
+}

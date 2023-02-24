@@ -41,7 +41,4 @@
   right: 0;
   height: var(--height);
   color: var(--clr-purple);
-  display: flex;
-  padding-inline: 1.5rem;
-  align-items: center;
 }

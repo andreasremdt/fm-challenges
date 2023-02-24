@@ -39,11 +39,7 @@ const Input: InputComponent = (props) => {
   );
 };
 
-const Adornment: ParentComponent = (props) => (
-  <span aria-hidden="true" class={styles.adornment}>
-    {props.children}
-  </span>
-);
+const Adornment: ParentComponent = (props) => <span class={styles.adornment}>{props.children}</span>;
 
 Input.Adornment = Adornment;
 

@@ -2,6 +2,7 @@ import type { Accessor, Component } from "solid-js";
 import { createSignal } from "solid-js";
 
 import Input from "./input";
+import styles from "./search-bar.module.css";
 
 type SearchBarProps = {
   word: Accessor<string>;
@@ -33,16 +34,18 @@ const SearchBar: Component<SearchBarProps> = (props) => {
         name="word"
         adornment={
           <Input.Adornment>
-            <svg width="20" height="20" viewBox="0 0 18 18">
-              <path
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="m12.663 12.663 3.887 3.887M1 7.664a6.665 6.665 0 1 0 13.33 0 6.665 6.665 0 0 0-13.33 0Z"
-              />
-            </svg>
+            <button type="submit" aria-label="Submit" class={styles.button}>
+              <svg width="20" height="20" viewBox="0 0 18 18">
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="m12.663 12.663 3.887 3.887M1 7.664a6.665 6.665 0 1 0 13.33 0 6.665 6.665 0 0 0-13.33 0Z"
+                />
+              </svg>
+            </button>
           </Input.Adornment>
         }
       />
