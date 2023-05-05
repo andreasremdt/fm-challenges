@@ -1,0 +1,59 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border: unset;
+  cursor: pointer;
+}
+
+.transparent {
+  background-color: transparent;
+  color: inherit;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.transparent:is(:focus-visible, :hover) {
+  color: var(--clr-gray-600);
+}
+
+.transparent:focus-visible {
+  outline: 2px solid var(--clr-gray-600);
+}
+
+:is(.primary, .secondary) {
+  height: 3.5rem;
+  min-width: 3.5rem;
+  padding-inline: 1rem;
+  column-gap: 1rem;
+  border-radius: 0.625rem;
+}
+
+.primary {
+  background-color: var(--clr-orange-400);
+  color: var(--clr-white);
+}
+
+.primary:is(:focus-visible, :hover) {
+  background-color: var(--clr-orange-300);
+}
+
+.primary:focus-visible {
+  outline: 2px solid var(--clr-orange-300);
+  outline-offset: 2px;
+}
+
+.secondary {
+  background-color: var(--clr-gray-200);
+  color: var(--clr-orange-400);
+}
+
+.secondary:is(:focus-visible, :hover) {
+  color: var(--clr-orange-300);
+}
+
+.secondary:focus-visible {
+  outline: 2px solid var(--clr-orange-300);
+  outline-offset: 2px;
+}

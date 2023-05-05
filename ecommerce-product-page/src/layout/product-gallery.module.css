@@ -1,0 +1,140 @@
+.cover {
+  width: 100%;
+}
+
+@media (width > 37.5rem) {
+  .wrapper {
+    max-width: 27.8125rem;
+  }
+
+  .cover {
+    border-radius: 0.9375rem;
+  }
+
+  .link {
+    cursor: zoom-in;
+    outline: none;
+  }
+
+  .link:focus {
+    opacity: 0.5;
+  }
+
+  :is(.next, .previous) {
+    width: 3.5rem;
+  }
+
+  .previous {
+    left: 0;
+    translate: -50% -50%;
+  }
+
+  .next {
+    right: 0;
+    translate: 50% -50%;
+  }
+}
+
+@media (width < 37.5rem) {
+  .cover {
+    aspect-ratio: 16/10;
+    object-fit: cover;
+  }
+
+  .figure {
+    margin-inline: -1rem;
+  }
+
+  .link {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  :is(.next, .previous) {
+    width: 2.5rem;
+  }
+
+  .next {
+    translate: -1rem -50%;
+  }
+
+  .previous {
+    translate: 1rem -50%;
+  }
+}
+
+.overlay {
+  background-color: var(--clr-black);
+  opacity: 0.75;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+}
+
+.dialog {
+  z-index: 10;
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  display: grid;
+  place-items: center;
+}
+
+.inner {
+  width: min(100%, 34.375rem);
+  position: relative;
+  padding-block: 2rem;
+}
+
+.image {
+  border-radius: 0.9375rem;
+}
+
+.close {
+  background-color: transparent;
+  border: unset;
+  color: var(--clr-white);
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  translate: 0 -100%;
+}
+
+.close:is(:hover, :focus-visible) {
+  color: var(--clr-orange-400);
+}
+
+:is(.next, .previous) {
+  aspect-ratio: 1;
+  background-color: var(--clr-white);
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  border: unset;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+:is(.next, .previous):is(:hover, :focus-visible) {
+  color: var(--clr-orange-400);
+}
+
+:is(.next, .previous):focus-visible {
+  outline: 2px solid var(--clr-white);
+  outline-offset: 2px;
+}
+
+.previous {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.figure {
+  position: relative;
+}

@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  height: 7rem;
+  border-bottom: 1px solid var(--clr-gray-300);
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  translate: 0 -2px;
+}
+
+.avatar {
+  margin-left: 1.5rem;
+}
+
+@media (width > 50rem) {
+  .toggle {
+    display: none;
+  }
+
+  .logo {
+    margin-right: 3.5rem;
+  }
+}
+
+@media (width < 50rem) {
+  .toggle {
+    margin-right: 0.5rem;
+  }
+
+  .header {
+    height: 4.25rem;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
+  .avatar {
+    width: 1.5rem;
+  }
+}

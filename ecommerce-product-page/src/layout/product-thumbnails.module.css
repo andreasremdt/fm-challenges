@@ -1,0 +1,44 @@
+.thumbnails {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: clamp(1rem, 3vw, 2rem);
+  justify-content: center;
+}
+
+@media (width < 37.5rem) {
+  .thumbnails {
+    display: none;
+  }
+}
+
+.thumbnail {
+  aspect-ratio: 1;
+  background-color: unset;
+  padding: unset;
+  cursor: pointer;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  border: 2px solid transparent;
+  width: 100%;
+  max-width: 5.5rem;
+  outline: none;
+  position: relative;
+}
+
+.thumbnail::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  background-color: var(--clr-white);
+  opacity: var(--opacity, 0);
+}
+
+.thumbnail:is(:hover, :focus-visible) {
+  --opacity: 0.5;
+}
+
+.active {
+  --opacity: 0.75;
+  border-color: var(--clr-orange-400);
+}

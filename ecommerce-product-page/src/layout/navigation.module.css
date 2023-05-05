@@ -1,0 +1,73 @@
+.navigation {
+  display: flex;
+}
+
+@media (width > 50rem) {
+  .navigation {
+    column-gap: 2rem;
+    height: inherit;
+    margin-right: auto;
+  }
+
+  .link {
+    font-size: 15px;
+    color: var(--clr-gray-500);
+    border-block: 4px solid transparent;
+    display: flex;
+    align-items: center;
+  }
+
+  .link:is(:focus-visible, :hover) {
+    color: var(--clr-gray-600);
+    border-bottom-color: var(--clr-orange-400);
+  }
+
+  :is(.overlay, .dialog) {
+    display: none;
+  }
+}
+
+@media (width < 50rem) {
+  .overlay {
+    background-color: var(--clr-black);
+    opacity: 0.75;
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+  }
+
+  .dialog {
+    z-index: 10;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--clr-white);
+  }
+
+  .navigation:is(.desktop) {
+    display: none;
+  }
+
+  .navigation {
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 15.625rem;
+    margin-top: 2rem;
+  }
+
+  .link {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--clr-gray-600);
+    padding-inline: 1.5rem;
+  }
+
+  .link:is(:focus-visible, :hover) {
+    color: var(--clr-orange-400);
+  }
+
+  .close {
+    margin: 1.125rem 1rem;
+  }
+}

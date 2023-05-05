@@ -1,0 +1,12 @@
+.avatar {
+  width: var(--width, 50px);
+  aspect-ratio: 1;
+  border-radius: 100%;
+  padding: unset;
+  border: unset;
+  cursor: pointer;
+}
+
+.avatar:is(:focus-visible, :hover) {
+  outline: 2px solid var(--clr-orange-400);
+}

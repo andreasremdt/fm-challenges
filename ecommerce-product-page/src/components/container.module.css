@@ -1,0 +1,12 @@
+.container {
+  width: min(calc(100% - 2rem), var(--width, 69.375rem));
+  margin-inline: auto;
+}
+
+.normal {
+  --width: 69.375rem;
+}
+
+.small {
+  --width: 63.4375rem;
+}

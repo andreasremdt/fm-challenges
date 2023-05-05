@@ -1,0 +1,26 @@
+.h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  color: var(--clr-gray-600);
+  font-weight: 700;
+  margin-block: clamp(1.25rem, 3vw, 1.6875rem) clamp(0.9375rem, 3vw, 2rem);
+}
+
+.h2 {
+  font-size: 28px;
+  color: var(--clr-gray-600);
+  font-weight: 700;
+}
+
+.h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--clr-gray-600);
+}
+
+.h4 {
+  font-size: 13px;
+  color: var(--clr-orange-400);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

@@ -1,0 +1,19 @@
+.entry {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 1rem;
+  margin-bottom: 1.625rem;
+}
+
+.image {
+  border-radius: 0.25rem;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.total {
+  color: var(--clr-gray-600);
+}

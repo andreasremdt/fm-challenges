@@ -1,0 +1,8 @@
+@media (width > 37.5rem) {
+  .layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(2rem, 4vw, 125px);
+    margin-block: 5.625rem;
+  }
+}
