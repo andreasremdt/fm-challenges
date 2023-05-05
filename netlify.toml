@@ -126,3 +126,9 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Content-Security-Policy = "default-src 'self'; style-src 'self'; form-action 'none'; script-src 'self'; connect-src 'self'; img-src 'self' data:; base-uri 'self'; frame-ancestors 'self'; object-src 'none';"
+
+[[headers]]
+  for = "/profile-card-component/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Content-Security-Policy = "default-src 'self'; style-src 'self'; form-action 'none'; script-src 'none'; connect-src 'none'; img-src 'self' data:; base-uri 'self'; frame-ancestors 'self'; object-src 'none';"
