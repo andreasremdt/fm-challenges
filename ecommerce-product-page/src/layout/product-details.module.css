@@ -51,6 +51,7 @@
 
 .add {
   width: 100%;
+  box-shadow: 0 1.25rem 3.125rem -1.25rem var(--clr-orange-400);
 }
 
 @media (width < 59.375rem) {

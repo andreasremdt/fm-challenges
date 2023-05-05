@@ -2,7 +2,7 @@
   .layout {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: clamp(2rem, 4vw, 125px);
+    gap: clamp(2rem, 4vw, 7.8125rem);
     margin-block: 5.625rem;
   }
 }
