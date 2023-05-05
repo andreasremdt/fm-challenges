@@ -27,13 +27,13 @@ export default function Header({ children }: Props) {
         <Icon name="menu" />
       </Button>
 
-      <img src="/images/logo.svg" alt="sneakers logo" width="138" height="20" className={styles.logo} />
+      <img src="images/logo.svg" alt="sneakers logo" width="138" height="20" className={styles.logo} />
 
       <Navigation links={links} open={open} onClose={() => setOpen(false)} />
 
       {children}
 
-      <Avatar image="/images/image-avatar.png" name="John Doe" className={styles.avatar} />
+      <Avatar image="images/image-avatar.png" name="John Doe" className={styles.avatar} />
     </header>
   );
 }

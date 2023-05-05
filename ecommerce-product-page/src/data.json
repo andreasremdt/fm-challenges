@@ -7,19 +7,19 @@
   "available": 12,
   "images": [
     {
-      "src": "/images/image-product-1.jpg",
+      "src": "images/image-product-1.jpg",
       "alt": "pair of white sneakers from front"
     },
     {
-      "src": "/images/image-product-2.jpg",
+      "src": "images/image-product-2.jpg",
       "alt": "pair of white sneakers on top of stones from back"
     },
     {
-      "src": "/images/image-product-3.jpg",
+      "src": "images/image-product-3.jpg",
       "alt": "single white sneaker on top of stones from front"
     },
     {
-      "src": "/images/image-product-4.jpg",
+      "src": "images/image-product-4.jpg",
       "alt": "single white sneaker on top of stones from side"
     }
   ]
