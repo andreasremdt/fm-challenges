@@ -16,7 +16,7 @@
 <main>
   <h1>Spending - Last 7 days</h1>
 
-  <canvas aria-label="Your weekly expenses" role="img" bind:this={canvas} />
+  <canvas aria-label="Your weekly expenses" bind:this={canvas} />
 
   <Footer />
 </main>
