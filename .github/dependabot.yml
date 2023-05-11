@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    assignees:
+      - "andreasremdt"
+    reviewers:
+      - "andreasremdt"
+    commit-message:
+      prefix: "deps"
+    schedule:
+      interval: "weekly"
