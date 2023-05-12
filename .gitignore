@@ -18,3 +18,23 @@
 dist/
 node_modules/
 coverage/
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# testing
+coverage/
+
+# next.js
+.next/
+out/
+
+# production
+build/

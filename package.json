@@ -15,7 +15,8 @@
     "github-user-search-app",
     "base-apparel-coming-soon",
     "dictionary-web-app",
-    "ecommerce-product-page"
+    "ecommerce-product-page",
+    "product-feedback-app"
   ],
   "repository": {
     "type": "git",
