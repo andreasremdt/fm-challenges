@@ -45,6 +45,8 @@ module.exports = {
     colors: {
       primary: "#AD1FEA",
       secondary: "#F49F85",
+      danger: "#D73737",
+      transparent: "transparent",
       blue: {
         DEFAULT: "#4661E6",
         300: "#62BCFA",

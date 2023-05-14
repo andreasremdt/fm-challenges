@@ -2,9 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import Typography from "./typography";
 
-type Story = StoryObj<typeof Typography>;
-
-export default {
+const meta: Meta<typeof Typography> = {
   title: "Components/Typography",
   component: Typography,
   tags: ["autodocs"],
@@ -19,7 +17,10 @@ export default {
       type: "string",
     },
   },
-} as Meta<typeof Typography>;
+};
+
+export default meta;
+type Story = StoryObj<typeof Typography>;
 
 export const Heading1: Story = {
   args: {
@@ -55,13 +56,13 @@ export const Body1: Story = {
   },
 };
 
-export const body2: Story = {
+export const Body2: Story = {
   args: {
     variant: "body2",
   },
 };
 
-export const body3: Story = {
+export const Body3: Story = {
   args: {
     variant: "body3",
   },
