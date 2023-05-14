@@ -16,6 +16,11 @@ export const icons = {
       <path d="M1 6l4-4 4 4" stroke="currentColor" strokeWidth="2" fill="none" fillRule="evenodd" />
     </svg>
   ),
+  check: (
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11">
+      <path fill="none" stroke="currentColor" strokeWidth="2" d="M1 5.233L4.522 9 12 1" />
+    </svg>
+  ),
   "new-feedback": (
     <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
       <defs>

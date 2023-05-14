@@ -16,7 +16,7 @@ const meta: Meta<typeof Icon> = {
 export default meta;
 type Story = StoryObj<typeof Icon>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     name: "arrow-down",
   },

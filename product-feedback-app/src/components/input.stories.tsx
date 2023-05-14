@@ -6,18 +6,21 @@ const meta: Meta<typeof Input> = {
   title: "Components/Input",
   component: Input,
   tags: ["autodocs"],
+  parameters: {
+    backgrounds: {
+      default: "white",
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Input>;
 
-export const Primary: Story = {
-  args: {},
-};
+export const Default: Story = {};
 
 export const WithValue: Story = {
   args: {
-    value: "John Doe",
+    defaultValue: "John Doe",
   },
 };
 

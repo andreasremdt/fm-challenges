@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import "../src/app/globals.css";
+import { theme } from "../tailwind.config";
 
 const preview: Preview = {
   parameters: {
@@ -15,7 +16,11 @@ const preview: Preview = {
       values: [
         {
           name: "light",
-          value: "#F7F8FD",
+          value: (theme as any).colors.gray[200],
+        },
+        {
+          name: "white",
+          value: (theme as any).colors.white,
         },
       ],
     },

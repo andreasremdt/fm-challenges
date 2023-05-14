@@ -38,24 +38,42 @@ export default function Select({ options, value = options[0], onChange, classNam
           onChange?.(option);
         }}
       >
-        <Listbox.Button className="h-12 bg-gray-200 rounded-md px-6 text-body2 outline-none transition-shadow w-full focus:ring-1 focus:ring-blue text-left inline-flex items-center justify-between">
-          {selected.label}
-          <Icon name="arrow-down" className="text-blue" />
+        <Listbox.Button as={Fragment}>
+          {({ open }) => (
+            <button
+              className={cx(
+                "h-12 bg-gray-200 rounded-md px-6 text-body2 outline-none transition-shadow w-full text-left inline-flex items-center justify-between",
+                {
+                  "ring-1 ring-blue": open,
+                  "focus:ring-1 focus:ring-blue": !open,
+                }
+              )}
+            >
+              {selected.label}
+              <Icon
+                name="arrow-down"
+                className={cx("text-blue transition-transform", {
+                  "rotate-180": open,
+                })}
+              />
+            </button>
+          )}
         </Listbox.Button>
         <Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
-          <Listbox.Options className="absolute top-0 left-0 right-0 bg-white rounded-lg shadow-dropdown">
+          <Listbox.Options className="absolute top-full left-0 mt-4 right-0 bg-white rounded-lg shadow-dropdown outline-none">
             {options.map((option) => (
               <Listbox.Option key={option.value} value={option} as={Fragment}>
                 {({ active, selected }) => (
                   <li
                     className={cx(
-                      "px-6 h-12 border-b border-gray-500/20 last:border-b-0 flex items-center cursor-pointer",
+                      "px-6 h-12 border-b border-gray-500/20 last:border-b-0 flex items-center justify-between cursor-pointer transition-colors",
                       {
-                        "text-primary": active || selected,
+                        "text-primary": active,
                       }
                     )}
                   >
                     {option.label}
+                    {selected && <Icon name="check" />}
                   </li>
                 )}
               </Listbox.Option>

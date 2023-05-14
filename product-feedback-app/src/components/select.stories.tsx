@@ -6,6 +6,11 @@ const meta: Meta<typeof Select> = {
   title: "Components/Select",
   component: Select,
   tags: ["autodocs"],
+  parameters: {
+    backgrounds: {
+      default: "white",
+    },
+  },
   args: {
     options: [
       {
@@ -35,6 +40,4 @@ const meta: Meta<typeof Select> = {
 export default meta;
 type Story = StoryObj<typeof Select>;
 
-export const Primary: Story = {
-  args: {},
-};
+export const Default: Story = {};

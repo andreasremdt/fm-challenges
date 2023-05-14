@@ -7,6 +7,11 @@ const meta: Meta<typeof Badge> = {
   title: "Components/Badge",
   component: Badge,
   tags: ["autodocs"],
+  parameters: {
+    backgrounds: {
+      default: "white",
+    },
+  },
   argTypes: {
     icon: {
       options: icons,
@@ -17,13 +22,13 @@ const meta: Meta<typeof Badge> = {
 export default meta;
 type Story = StoryObj<typeof Badge>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     children: "UX",
   },
 };
 
-export const WithIcon: Story = {
+export const Upvote: Story = {
   args: {
     icon: "arrow-up",
     children: "100",
