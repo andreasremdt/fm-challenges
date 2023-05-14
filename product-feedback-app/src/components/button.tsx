@@ -48,7 +48,7 @@ export default function Button<T extends ElementType = "button" | "a">({
     <Component
       {...props}
       className={cx(
-        "h-11 font-bold rounded-md px-10 inline-flex items-center justify-center gap-x-2 text-h4 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-colors",
+        "h-11 font-bold rounded-lg px-10 inline-flex items-center justify-center gap-x-2 text-h4 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-colors",
         styles[variant],
         className
       )}
