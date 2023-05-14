@@ -46,7 +46,6 @@ module.exports = {
       primary: "#AD1FEA",
       secondary: "#F49F85",
       danger: "#D73737",
-      transparent: "transparent",
       blue: {
         DEFAULT: "#4661E6",
         300: "#62BCFA",
@@ -59,6 +58,7 @@ module.exports = {
         200: "#F7F8FD",
       },
       white: "#FFFFFF",
+      transparent: "transparent",
     },
   },
   plugins: [],

@@ -1,12 +1,21 @@
 import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
 
+import { theme } from "../../tailwind.config.js";
+
 <Meta title="Colors" />
 
 # Colors
 
 <ColorPalette>
-  <ColorItem title="Primary" colors={["#AD1FEA"]} />
-  <ColorItem title="Secondary" colors={["#F49F85"]} />
-  <ColorItem title="Blue" colors={["#4661E6", "#62BCFA"]} />
-  <ColorItem title="Neutral" colors={["#FFFFFF", "#F7F8FD", "#F2F4FF", "#647196", "#3A4374", "#373F68"]} />
+  {Object.keys(theme.colors).map((color) => {
+    if (typeof theme.colors[color] === "string") {
+      return <ColorItem title={color} colors={[theme.colors[color]]} key={color} />
+    }
+
+    return (
+      <ColorItem title={color} colors={theme.colors[color]} />
+    )
+
+})}
+
 </ColorPalette>
