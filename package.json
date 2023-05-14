@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/andreasremdt/fm-challenges/issues"
   },
-  "homepage": "https://github.com/andreasremdt/fm-challenges#readme"
+  "homepage": "https://github.com/andreasremdt/fm-challenges#readme",
+  "dependencies": {
+    "@headlessui/react": "^1.7.14"
+  }
 }

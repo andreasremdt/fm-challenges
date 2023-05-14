@@ -60,6 +60,9 @@ module.exports = {
       white: "#FFFFFF",
       transparent: "transparent",
     },
+    boxShadow: {
+      dropdown: "0 10px 40px -7px rgba(55, 63, 104, 0.35)",
+    },
   },
   plugins: [],
 };
