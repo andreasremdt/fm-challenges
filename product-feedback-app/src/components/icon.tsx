@@ -73,6 +73,9 @@ export const icons = {
 };
 
 type Props = {
+  /**
+   * The name of the icon to render.
+   */
   name: keyof typeof icons;
 } & ComponentPropsWithoutRef<"svg">;
 
