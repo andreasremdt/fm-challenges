@@ -45,10 +45,10 @@ module.exports = {
     colors: {
       primary: "#AD1FEA",
       secondary: "#F49F85",
+      tertiary: "#62BCFA",
       danger: "#D73737",
       blue: {
         DEFAULT: "#4661E6",
-        300: "#62BCFA",
         200: "#CFD7FF",
       },
       gray: {

@@ -7,7 +7,7 @@ const meta: Meta<typeof Typography> = {
   component: Typography,
   tags: ["autodocs"],
   args: {
-    children: "Whereas disregard and contempt for human rights have resulted ",
+    children: "Whereas disregard and contempt for human rights have resulted",
   },
   argTypes: {
     variant: {
