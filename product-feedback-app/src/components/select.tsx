@@ -1,3 +1,5 @@
+"use client";
+
 import { ComponentPropsWithoutRef, Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import cx from "classnames";
