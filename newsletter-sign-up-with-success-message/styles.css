@@ -1,0 +1,303 @@
+/*****************************************************/
+/* VARIABLES                                         */
+/*****************************************************/
+:root {
+  --clr-primary: hsl(4 100% 67%);
+  --clr-orange: hsl(15 100% 61%);
+  --clr-pink: hsl(346 100% 66%);
+  --clr-background: hsl(234 17% 26%);
+  --clr-dark-gray: hsl(234 29% 20%);
+  --clr-gray: hsl(243 28% 13%);
+  --clr-white: hsl(0 0% 100%);
+
+  --ff-sans-serif: Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/*****************************************************/
+/* WEB FONTS                                         */
+/*****************************************************/
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(./fonts/roboto-bold.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"), local("Roboto-Regular"), url(./fonts/roboto.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+/*****************************************************/
+/* RESET                                             */
+/*****************************************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+p,
+figure {
+  margin: unset;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  font-family: var(--ff-sans-serif);
+  line-height: 1.5;
+  color: var(--clr-dark-gray);
+  min-height: 100dvh;
+}
+
+@media (min-width: 40rem) {
+  body {
+    display: grid;
+    place-items: center;
+    background-color: var(--clr-background);
+  }
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*****************************************************/
+/* TYPOGRAPHY                                        */
+/*****************************************************/
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: unset;
+  margin: unset;
+}
+
+li {
+  column-gap: 1rem;
+}
+
+li::before {
+  content: url(./images/icon-list.svg);
+}
+
+li:not(:last-child) {
+  margin-bottom: 0.315rem;
+}
+
+label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+label + span {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--clr-primary);
+}
+
+/*****************************************************/
+/* BUTTON                                            */
+/*****************************************************/
+button {
+  border: unset;
+  width: 100%;
+  height: 3.5rem;
+  padding-inline: 1rem;
+  background-color: var(--clr-dark-gray);
+  color: var(--clr-white);
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  transition: box-shadow 0.2s ease-out, scale 0.075s linear;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  white-space: nowrap;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(204deg, var(--clr-orange), var(--clr-pink));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+button:is(:hover, :focus-visible) {
+  box-shadow: 0 1rem 2rem color-mix(in srgb, var(--clr-primary) 50%, white);
+}
+
+button:is(:hover, :focus-visible)::after {
+  opacity: 1;
+}
+
+button:active {
+  scale: 1.075;
+}
+
+/*****************************************************/
+/* INPUT                                             */
+/*****************************************************/
+input {
+  border: 1px solid color-mix(in srgb, var(--clr-gray) 25%, white);
+  width: 100%;
+  height: 3.5rem;
+  color: inherit;
+  border-radius: 0.5rem;
+  appearance: none;
+  outline: none;
+  transition: border-color 0.2s linear;
+  padding-inline: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+input::placeholder {
+  opacity: 1;
+  color: color-mix(in srgb, var(--clr-dark-gray) 50%, white);
+}
+
+input:is(:hover, :focus-visible) {
+  border-color: var(--clr-dark-gray);
+}
+
+input[aria-invalid="true"] {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+  background-color: color-mix(in srgb, var(--clr-primary) 15%, white);
+}
+
+/*****************************************************/
+/* CLASSES                                           */
+/*****************************************************/
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/*****************************************************/
+/* LAYOUT                                            */
+/*****************************************************/
+main > img {
+  margin-bottom: 2.5rem;
+}
+
+form {
+  margin-top: 2.4rem;
+}
+
+@media (max-width: 40rem) {
+  main {
+    flex-direction: column-reverse;
+  }
+
+  main.done {
+    flex-direction: column;
+    padding: 9.375rem 1.5rem 2.5rem 1.5rem;
+    height: 100dvh;
+  }
+
+  main > button {
+    margin-top: auto;
+  }
+
+  main > figure > img {
+    width: 100%;
+  }
+
+  main > div {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (min-width: 40rem) {
+  main {
+    background-color: var(--clr-white);
+    width: min(calc(100% - 2rem), 58rem);
+    border-radius: 36px;
+    box-shadow: 0 0.9375rem 3.75rem hsla(0, 0%, 0%, 0.25);
+    padding: 1.5rem;
+  }
+
+  main.done {
+    flex-direction: column;
+    padding: 3rem 4rem 4rem;
+    width: min-content;
+    min-width: 31.25rem;
+  }
+
+  main > figure > img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+
+  main > div {
+    flex: 1;
+    display: grid;
+    place-content: center;
+    padding: 4rem clamp(1.5rem, 5vw, 4rem) 4rem clamp(0rem, 3vw, 2.5rem);
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Andreas Remdt" />
+    <meta name="description" content="This is a solution to the news homepage challenge on Frontend Mentor" />
+
+    <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="flex" data-main>
+      <div>
+        <h1>Stay updated!</h1>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul>
+          <li class="flex">Product discovery and building what matters</li>
+          <li class="flex">Measuring to ensure updates are a success</li>
+          <li class="flex">And much more!</li>
+        </ul>
+
+        <form data-form>
+          <div class="flex justify-between" data-error-content>
+            <label for="email">Email address</label>
+          </div>
+          <input type="email" id="email" name="email" required placeholder="email@company.com" data-validate />
+          <button type="submit">Subscribe to monthly newsletter</button>
+        </form>
+      </div>
+
+      <figure>
+        <img
+          srcset="./images/illustration-sign-up-mobile.svg 375w, ./images/illustration-sign-up-desktop.svg 400w"
+          sizes="(max-width: 40rem) 375px, 400px"
+          src="./images/illustration-sign-up-desktop.svg"
+          alt="illustration of our dashboard"
+          width="400"
+        />
+      </figure>
+    </main>
+
+    <template data-template>
+      <img src="./images/icon-success.svg" alt="" aria-hidden="true" width="64" height="64" />
+      <h1>Thanks for subscribing!</h1>
+      <p>
+        A confirmation email has been sent to <b>{{ email }}</b>. Please open it and click the button inside to confirm
+        your subscription.
+      </p>
+      <button type="button" data-reload>Dismiss message</button>
+    </template>
+
+    <script src="./dist/script.js"></script>
+  </body>
+</html>

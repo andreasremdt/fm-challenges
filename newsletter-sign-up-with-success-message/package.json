@@ -1,0 +1,10 @@
+{
+  "name": "newsletter-sign-up-with-success-message",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
