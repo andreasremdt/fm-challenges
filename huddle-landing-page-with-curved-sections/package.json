@@ -1,0 +1,10 @@
+{
+  "name": "huddle-landing-page-with-curved-sections",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}

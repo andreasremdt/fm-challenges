@@ -1,6 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/layout.astro";
 import Card from "../components/card.astro";
+import AboutCard from "../components/about-card.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -20,10 +21,41 @@ import Card from "../components/card.astro";
   </section>
 
   <section class="my-40 grid grid-cols-2 gap-8">
-    <Card href="/services/web-design" className="bg-[url(/images/web-design.jpg)] row-start-1 row-span-2"
-      >Web Design</Card
-    >
+    <Card href="/services/web-design" className="bg-[url(/images/web-design.jpg)] row-start-1 row-span-2">
+      Web Design
+    </Card>
     <Card href="/services/app-design" className="bg-[url(/images/app-design.jpg)]">App Design</Card>
     <Card href="/services/graphic-design" className="bg-[url(/images/graphic-design.jpg)]">Graphic Design</Card>
   </section>
+
+  {/* ABOUT SECTION */}
+  <section class="my-40 flex gap-8 bg-[url(./images/bg-pattern-leaf.jpg)] bg-no-repeat">
+    <AboutCard
+      title="Passionate"
+      image="./images/home/illustration-passionate.svg"
+      alt="illustration of a man working in front of a touch screen"
+    >
+      Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We
+      merge art, design, and technology into exciting new solutions.
+    </AboutCard>
+    <AboutCard
+      title="Resourceful"
+      image="./images/home/illustration-resourceful.svg"
+      alt="illustration of a woman working in front of a touch screen"
+      className="before:-rotate-90"
+    >
+      Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer
+      collaboration. It guarantees superior results that fulfill our clients’ needs.
+    </AboutCard>
+    <AboutCard
+      title="Friendly"
+      image="./images/home/illustration-friendly.svg"
+      alt="illustration of two people holding a sign"
+      className="before:rotate-90"
+    >
+      We are a group of enthusiastic folks who know how to put people first. Our success depends on our customers, and
+      we strive to give them the best experience a company can provide.
+    </AboutCard>
+  </section>
+  {/* END ABOUT SECTION */}
 </Layout>
