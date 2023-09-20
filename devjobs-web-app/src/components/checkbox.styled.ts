@@ -33,7 +33,7 @@ export const Input = styled.input`
     outline-offset: 2px;
   }
 
-  :checked + ${Background} {
+  &:checked + ${Background} {
     background: ${(props) => props.theme.colors.violet}
       url("data:image/svg+xml,%3Csvg width='15' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 6.57l3.572 3.572L13.714 1' stroke='%23FFF' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E")
       no-repeat center;
