@@ -16,7 +16,7 @@ test("it should render all images inside a button", () => {
   expect(screen.getAllByRole("button")).toHaveLength(4);
   expect(screen.getAllByRole("img")).toHaveLength(4);
   expect(screen.getAllByRole("img").at(0)).toHaveAttribute("alt", "pair of white sneakers from front");
-  expect(screen.getAllByRole("img").at(0)).toHaveAttribute("src", "/images/image-product-1-thumbnail.jpg");
+  expect(screen.getAllByRole("img").at(0)).toHaveAttribute("src", "images/image-product-1-thumbnail.jpg");
 });
 
 test("it should apply a special class to the active thumbnail", () => {

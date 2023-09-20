@@ -20,7 +20,7 @@ test("it should render a correctly formated cart entry", () => {
     />
   );
 
-  expect(screen.getByRole("img")).toHaveAttribute("src", "/images/image-product-1-thumbnail.jpg");
+  expect(screen.getByRole("img")).toHaveAttribute("src", "images/image-product-1-thumbnail.jpg");
   expect(screen.getByRole("img")).toHaveAttribute("alt", "pair of white sneakers from front");
   expect(screen.getByRole("heading")).toHaveTextContent(/fall limited edition sneakers/i);
   expect(screen.getByText(/\$125.00 x 2/i)).toBeInTheDocument();
