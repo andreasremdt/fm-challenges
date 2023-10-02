@@ -31,6 +31,6 @@
     "eslint-plugin-testing-library": "^6.0.2",
     "typescript": "^5.2.2",
     "vite": "^2.9.16",
-    "vitest": "^0.34.5"
+    "vitest": "^0.34.6"
   }
 }
