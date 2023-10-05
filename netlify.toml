@@ -150,3 +150,9 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline'; form-action 'self'; script-src 'self'; connect-src 'none'; img-src 'self' data:; base-uri 'self'; frame-ancestors 'self'; object-src 'none';"
+
+[[headers]]
+  for = "/age-calculator-app/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Content-Security-Policy = "default-src 'self'; style-src 'self'; form-action 'self'; script-src 'self'; connect-src 'none'; img-src 'self' data:; base-uri 'self'; frame-ancestors 'self'; object-src 'none';"

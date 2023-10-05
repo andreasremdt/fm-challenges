@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Andreas Remdt" />
+    <meta name="description" content="This is a solution to the age calculator app challenge on Frontend Mentor" />
+
+    <title>Frontend Mentor | Age calculator app</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="main">
+      <form class="form" data-form>
+        <div class="form-control">
+          <label class="form-control__label" for="day">Day</label>
+          <input type="number" class="form-control__input" id="day" name="day" placeholder="DD" required />
+        </div>
+        <div class="form-control">
+          <label class="form-control__label" for="month">Month</label>
+          <input type="number" class="form-control__input" id="month" name="month" placeholder="MM" required />
+        </div>
+        <div class="form-control">
+          <label class="form-control__label" for="year">Year</label>
+          <input type="number" class="form-control__input" id="year" name="year" placeholder="YYYY" required />
+        </div>
+        <button type="submit" aria-label="Calculate my age" class="form__button">
+          <svg width="46" height="44" viewBox="0 0 46 44" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44" />
+            </g>
+          </svg>
+        </button>
+      </form>
+      <p class="result" data-result="years">
+        <span class="result__value">--</span>
+        <span>years</span>
+      </p>
+      <p class="result" data-result="months">
+        <span class="result__value">--</span>
+        <span>months</span>
+      </p>
+      <p class="result" data-result="days">
+        <span class="result__value">--</span>
+        <span>days</span>
+      </p>
+    </main>
+
+    <script type="module" src="src/script.ts"></script>
+  </body>
+</html>

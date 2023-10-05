@@ -15,7 +15,8 @@
     "dictionary-web-app",
     "ecommerce-product-page",
     "newsletter-sign-up-with-success-message",
-    "huddle-landing-page-with-curved-sections"
+    "huddle-landing-page-with-curved-sections",
+    "age-calculator-app"
   ],
   "repository": {
     "type": "git",

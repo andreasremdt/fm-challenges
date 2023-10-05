@@ -1,0 +1,12 @@
+{
+  "name": "age-calculator-app",
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^2.9.16"
+  }
+}

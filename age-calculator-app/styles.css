@@ -1,0 +1,257 @@
+/**************************************/
+/* VARIABLES                          */
+/**************************************/
+:root {
+  /* COLORS */
+  --clr-purple: hsl(259 100% 65%);
+  --clr-error: hsl(0 100% 67%);
+  --clr-text: hsl(0 0% 8%);
+  --clr-label: hsl(0 1% 44%);
+  --clr-background: hsl(0 0% 94%);
+  --clr-line: hsl(0 0% 86%);
+  --clr-white: hsl(0 100% 100%);
+
+  /* FONT FAMILIES */
+  --ff-body: Poppins, var(--ff-fallback);
+  --ff-fallback: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* FONT SIZES */
+  --fs-xs: 0.875rem;
+  --fs-base: 2rem;
+  --fs-lg: 6.5rem;
+}
+
+@media (width < 45rem) {
+  :root {
+    /* FONT SIZES */
+    --fs-xs: 0.75rem;
+    --fs-base: 1.25rem;
+    --fs-lg: 3.5rem;
+  }
+}
+
+/**************************************/
+/* WEB FONTS                          */
+/**************************************/
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Poppins Bold"), local("Poppins-Bold"), url(./fonts/poppins-bold.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 800;
+  src: local("Poppins ExtraBold Italic"), local("Poppins-ExtraBoldItalic"),
+    url(./fonts/poppins-extrabold-italic.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 400;
+  src: local("Poppins Italic"), local("Poppins-Italic"), url(./fonts/poppins-italic.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+/**************************************/
+/* CSS RESET                          */
+/**************************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: unset;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  color: var(--clr-text);
+  font: 700 var(--fs-base) / 1.5 var(--ff-body);
+  background-color: var(--clr-background);
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+input,
+button {
+  font: inherit;
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/**************************************/
+/* LAYOUT                             */
+/**************************************/
+.main {
+  width: min(calc(100% - 2rem), 840px);
+  padding: 3.5rem;
+  background-color: var(--clr-white);
+  border-radius: 1.5rem 1.5rem 12.5rem 1.5rem;
+}
+
+@media (width < 45rem) {
+  .main {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/**************************************/
+/* FORM                               */
+/**************************************/
+.form {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid var(--clr-line);
+  position: relative;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+}
+
+.form-control {
+  max-width: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-control__label {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  color: var(--clr-label);
+  letter-spacing: 3.5px;
+
+  &:has(+ input[aria-invalid="true"]) {
+    color: var(--clr-error);
+  }
+}
+
+.form-control__input {
+  width: 100%;
+  border: 1px solid var(--clr-line);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  color: inherit;
+  caret-color: var(--clr-purple);
+  transition: border-color 0.15s ease-out, outline 0.05s ease-out;
+
+  &::placeholder {
+    opacity: 0.5;
+    color: var(--clr-text);
+  }
+
+  &:is(:hover, :focus-visible) {
+    border-color: var(--clr-purple);
+  }
+
+  &:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--clr-purple) 30%, var(--clr-white));
+  }
+
+  &[aria-invalid="true"] {
+    border-color: var(--clr-error);
+    outline-color: color-mix(in srgb, var(--clr-error) 30%, var(--clr-white));
+  }
+}
+
+.form-control__error {
+  color: var(--clr-error);
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  font-style: italic;
+  margin: unset;
+}
+
+.form__button {
+  width: 6rem;
+  aspect-ratio: 1;
+  border: unset;
+  border-radius: 50%;
+  background-color: var(--clr-purple);
+  color: var(--clr-white);
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  translate: 0 -50%;
+  transition: background-color 0.15s ease-out, outline 0.05s ease-out;
+
+  &:is(:hover, :focus-visible) {
+    background-color: var(--clr-text);
+  }
+
+  &:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--clr-text) 40%, var(--clr-white));
+  }
+}
+
+@media (width < 45rem) {
+  .form {
+    gap: 1rem;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .form__button {
+    width: 4rem;
+    right: 50%;
+    translate: 50% -50%;
+
+    & svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+
+/**************************************/
+/* RESULTS                            */
+/**************************************/
+.result {
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  font-style: italic;
+  margin: unset;
+  line-height: 1.1;
+}
+
+.result__value {
+  color: var(--clr-purple);
+}
