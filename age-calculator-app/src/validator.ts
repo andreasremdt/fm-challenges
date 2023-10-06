@@ -1,11 +1,10 @@
-import type { InputValue, Listeners, FieldRules, GlobalRules } from "./types";
+import type { InputValue, Listeners, Rules } from "./types";
 import { getErrorElement, inputFactory } from "./utils";
 
 export default class Validator {
   #form: HTMLFormElement;
   #inputs: Map<HTMLInputElement, InputValue>;
-  #fieldRules: FieldRules = {};
-  #globalRules: GlobalRules | null = null;
+  #rules: Rules = {};
   #listeners: Listeners = {};
 
   constructor(selector: string) {
@@ -29,34 +28,36 @@ export default class Validator {
     return this;
   }
 
-  setFieldRules(fieldRules: FieldRules) {
-    this.#fieldRules = fieldRules;
+  rules(rules: Rules) {
+    this.#rules = rules;
 
     return this;
   }
 
-  setGlobalRules(globalRules: GlobalRules) {
-    this.#globalRules = globalRules;
-
-    return this;
-  }
-
-  on(event: string, fn: (data: any) => void) {
+  on(event: "validate", fn: (formData: FormData) => string | void): this;
+  on(event: "submit", fn: (formData: FormData) => void): this;
+  on(event: "validate" | "submit", fn: (formData: FormData) => string | void) {
     this.#listeners[event] = fn;
+
+    return this;
   }
 
   off(event: string) {
     delete this.#listeners[event];
+
+    return this;
   }
 
-  emit(event: string, data: any) {
+  emit(event: string, formData: FormData) {
     if (this.#listeners[event]) {
-      this.#listeners[event](data);
+      return this.#listeners[event](formData) ?? null;
     }
+
+    return null;
   }
 
   #validate = (input: InputValue) => {
-    let error = this.#fieldRules[input.element.name](input.element);
+    let error = this.#rules[input.element.name](input.element);
 
     input.error = Boolean(error);
     input.message = error;
@@ -70,7 +71,7 @@ export default class Validator {
     this.#inputs.forEach(this.#validate);
 
     let formData = new FormData(this.#form);
-    let error = this.#globalRules?.(formData) ?? null;
+    let error = this.emit("validate", formData);
     let allFieldsAreOkay = Array.from(this.#inputs).every(([_, input]) => !input.error);
 
     if (allFieldsAreOkay) {

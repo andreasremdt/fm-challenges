@@ -1,4 +1,4 @@
-export const fieldRules = {
+const rules = {
   day: (input: HTMLInputElement) => {
     const { validity, valueAsNumber } = input;
 
@@ -44,14 +44,4 @@ export const fieldRules = {
   },
 };
 
-export function globalRules(formData: FormData) {
-  let day = Number(formData.get("day"));
-  let month = Number(formData.get("month"));
-  let year = Number(formData.get("year"));
-
-  if (isNaN(Date.parse(`${year}-${month}-${day}`))) {
-    return "Must be a valid date";
-  }
-
-  return null;
-}
+export default rules;

@@ -5,13 +5,11 @@ export type InputValue = {
 };
 
 export type Listeners = {
-  [key: string]: (data: any) => void;
+  [key: string]: (formData: FormData) => string | void;
 };
 
-export type FieldRules = {
+export type Rules = {
   [key: string]: (input: HTMLInputElement) => string | null;
 };
-
-export type GlobalRules = (formData: FormData) => string | null;
 
 export type Fields = "years" | "days" | "months";

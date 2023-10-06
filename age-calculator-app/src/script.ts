@@ -1,6 +1,6 @@
 import type { Fields } from "./types";
 import Validator from "./validator";
-import { fieldRules, globalRules } from "./rules";
+import rules from "./rules";
 import { getDateDiff, animate } from "./utils";
 
 function handleSubmit(formData: FormData) {
@@ -16,8 +16,14 @@ function handleSubmit(formData: FormData) {
   });
 }
 
-new Validator("[data-form]")
-  .setFieldRules(fieldRules)
-  .setGlobalRules(globalRules)
-  .register()
-  .on("submit", handleSubmit);
+function handleValidation(formData: FormData) {
+  let day = Number(formData.get("day"));
+  let month = Number(formData.get("month"));
+  let year = Number(formData.get("year"));
+
+  if (isNaN(Date.parse(`${year}-${month}-${day}`))) {
+    return "Must be a valid date";
+  }
+}
+
+new Validator("[data-form]").rules(rules).on("submit", handleSubmit).on("validate", handleValidation).register();
