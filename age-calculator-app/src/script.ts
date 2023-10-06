@@ -20,8 +20,9 @@ function handleValidation(formData: FormData) {
   let day = Number(formData.get("day"));
   let month = Number(formData.get("month"));
   let year = Number(formData.get("year"));
+  let date = new Date(year, month - 1, day);
 
-  if (isNaN(Date.parse(`${year}-${month}-${day}`))) {
+  if (isNaN(date.getTime()) || date.getFullYear() !== year || date.getMonth() !== month - 1 || date.getDate() !== day) {
     return "Must be a valid date";
   }
 }
