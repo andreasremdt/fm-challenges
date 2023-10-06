@@ -85,7 +85,7 @@ body {
   color: var(--clr-text);
   font: 700 var(--fs-base) / 1.5 var(--ff-body);
   background-color: var(--clr-background);
-  min-height: 100dvh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,6 +115,21 @@ button {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/**************************************/
+/* CLASSES                            */
+/**************************************/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 /**************************************/
