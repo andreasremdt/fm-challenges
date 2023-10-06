@@ -28,6 +28,16 @@ export default class Validator {
     return this;
   }
 
+  unregister() {
+    this.#form.removeAttribute("novalidate");
+    this.#form.removeAttribute("aria-live");
+    this.#form.removeEventListener("submit", this.#handleSubmit);
+    this.#form.removeEventListener("input", this.#handleInput);
+    this.#form.removeEventListener("blur", this.#handleBlur, true);
+
+    return this;
+  }
+
   rules(rules: Rules) {
     this.#rules = rules;
 
