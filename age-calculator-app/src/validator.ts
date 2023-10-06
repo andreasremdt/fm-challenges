@@ -70,7 +70,10 @@ export default class Validator {
     let error = this.#rules[input.element.name](input.element);
 
     input.error = Boolean(error);
-    input.message = error;
+
+    if (error) {
+      input.message = error;
+    }
 
     this.#render(input);
   };

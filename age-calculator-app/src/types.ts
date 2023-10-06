@@ -9,7 +9,7 @@ export type Listeners = {
 };
 
 export type Rules = {
-  [key: string]: (input: HTMLInputElement) => string | null;
+  [key: string]: (input: HTMLInputElement) => string | void;
 };
 
 export type Fields = "years" | "days" | "months";
