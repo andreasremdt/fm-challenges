@@ -52,13 +52,13 @@ export default class Validator {
     return this;
   }
 
-  off(event: string) {
+  off(event: "validate" | "submit") {
     delete this.#listeners[event];
 
     return this;
   }
 
-  emit(event: string, formData: FormData) {
+  emit(event: "validate" | "submit", formData: FormData) {
     if (this.#listeners[event]) {
       return this.#listeners[event](formData) ?? null;
     }
