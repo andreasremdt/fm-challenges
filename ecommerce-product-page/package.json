@@ -30,7 +30,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-testing-library": "^6.2.0",
     "typescript": "^5.3.2",
-    "vite": "^2.9.16",
+    "vite": "^2.9.17",
     "vitest": "^0.34.6"
   }
 }
