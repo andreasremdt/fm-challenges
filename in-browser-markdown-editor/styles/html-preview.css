@@ -1,9 +1,0 @@
-.html-preview {
-  overflow-y: auto;
-}
-
-.html-preview > .content {
-  max-width: 672px;
-  margin-inline: auto;
-  padding: 1.5rem 1rem;
-}
