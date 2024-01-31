@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Andreas Remdt" />
+    <meta name="description" content="This is a solution to the recipe page challenge on Frontend Mentor" />
+
+    <title>Frontend Mentor | Recipe page</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main itemscope itemtype="https://schema.org/Recipe">
+      <img src="./images/image-omelette.webp" alt="an omelette on a plate" width="1312" height="600" itemprop="image" />
+
+      <div class="content">
+        <h1 itemprop="name">Simple Omelette Recipe</h1>
+
+        <p itemprop="description">
+          An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection,
+          optionally filled with your choice of cheese, vegetables, or meats.
+        </p>
+
+        <div class="prep-time">
+          <h2>Preparation time</h2>
+
+          <ul>
+            <li><strong>Total:</strong> <span itemprop="totalTime">Approximately 10 minutes</span></li>
+            <li><strong>Preparation:</strong> <span itemprop="prepTime">5 minutes</span></li>
+            <li><strong>Cooking:</strong> <span itemprop="cookTime">5 minutes</span></li>
+          </ul>
+        </div>
+
+        <h2>Ingredients</h2>
+
+        <ul>
+          <li itemprop="recipeIngredient">2-3 large eggs</li>
+          <li itemprop="recipeIngredient">Salt, to taste</li>
+          <li itemprop="recipeIngredient">Pepper, to taste</li>
+          <li itemprop="recipeIngredient">1 tablespoon of butter or oil</li>
+          <li itemprop="recipeIngredient">Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
+        </ul>
+
+        <hr />
+
+        <h2>Instructions</h2>
+
+        <ol itemprop="recipeInstructions" itemscope itemtype="https://schema.org/HowTo">
+          <li itemprop="step">
+            <strong>Beat the eggs:</strong> In a bowl, beat the eggs with a pinch of salt and pepper until they are well
+            mixed. You can add a tablespoon of water or milk for a fluffier texture.
+          </li>
+
+          <li itemprop="step">
+            <strong>Heat the pan:</strong> Place a non-stick frying pan over medium heat and add butter or oil.
+          </li>
+
+          <li itemprop="step">
+            <strong>Cook the omelette:</strong> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan
+            to ensure the eggs evenly coat the surface.
+          </li>
+
+          <li itemprop="step">
+            <strong>Add fillings (optional):</strong> When the eggs begin to set at the edges but are still slightly
+            runny in the middle, sprinkle your chosen fillings over one half of the omelette.
+          </li>
+
+          <li itemprop="step">
+            <strong>Fold and serve:</strong> As the omelette continues to cook, carefully lift one edge and fold it over
+            the fillings. Let it cook for another minute, then slide it onto a plate.
+          </li>
+
+          <li itemprop="step"><strong>Enjoy:</strong> Serve hot, with additional salt and pepper if needed.</li>
+        </ol>
+
+        <hr />
+
+        <h2>Nutrition</h2>
+
+        <p>The table below shows nutritional values per serving without the additional fillings.</p>
+
+        <dl itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation">
+          <div>
+            <dt>Calories</dt>
+            <dd itemprop="calories">277kcal</dd>
+          </div>
+          <div>
+            <dt>Carbs</dt>
+            <dd itemprop="carbohydrateContent">0g</dd>
+          </div>
+          <div>
+            <dt>Protein</dt>
+            <dd itemprop="proteinContent">20g</dd>
+          </div>
+          <div>
+            <dt>Fat</dt>
+            <dd itemprop="fatContent">22g</dd>
+          </div>
+        </dl>
+      </div>
+    </main>
+  </body>
+</html>

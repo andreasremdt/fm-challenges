@@ -1,0 +1,241 @@
+/* --------------------------------------------- */
+/* WEBFONTS                                      */
+/* --------------------------------------------- */
+@font-face {
+  font-family: "Young Serif";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Young Serif Regular"), local("YoungSerif-Regular"), url(./fonts/young-serif-regular.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Outfit;
+  font-style: normal;
+  font-weight: 600;
+  src: local("Outfit SemiBold"), local("Outfit-SemiBold"), url(./fonts/outfit-semibold.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Outfit;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Outfit Regular"), local("Outfit-Regular"), url(./fonts/outfit-regular.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Outfit;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Outfit Bold"), local("Outfit-Bold"), url(./fonts/outfit-bold.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+/* --------------------------------------------- */
+/* VARIABLES                                     */
+/* --------------------------------------------- */
+:root {
+  --clr-nutmeg: hsl(14, 45%, 36%);
+  --clr-dark-rasperry: hsl(332, 51%, 32%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-rose-white: hsl(330, 100%, 98%);
+  --clr-eggshell: hsl(30, 54%, 90%);
+  --clr-light-grey: hsl(30, 18%, 87%);
+  --clr-wenge-brown: hsl(30, 10%, 34%);
+  --clr-dark-charcoal: hsl(24, 5%, 18%);
+
+  --ff-sans: Outfit, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --ff-serif: "Young Serif", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* --------------------------------------------- */
+/* RESET                                         */
+/* --------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark light;
+  hanging-punctuation: first last;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: unset;
+  font-family: var(--ff-sans);
+  line-height: 1.5;
+  color: var(--clr-wenge-brown);
+
+  @media (width > 37.5rem) {
+    padding: clamp(2rem, 10vw, 7.75rem) 2rem;
+    display: grid;
+    place-items: center;
+    min-height: 100svh;
+    background-color: var(--clr-eggshell);
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  line-height: 1;
+  font-family: var(--ff-serif);
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+hr {
+  border: unset;
+  height: 1px;
+  margin-block: 2rem;
+  background-color: var(--clr-light-grey);
+}
+
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  padding-left: 1rem;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  &::marker {
+    color: var(--bullet-color, var(--clr-nutmeg));
+    font-weight: bold;
+  }
+}
+
+/* --------------------------------------------- */
+/* TYPOGRAPHY                                    */
+/* --------------------------------------------- */
+h1 {
+  color: var(--clr-dark-charcoal);
+  font-size: 2.5rem;
+  font-weight: normal;
+  margin-block: 2.5rem 1.5rem;
+
+  @media (width < 37.5rem) {
+    font-size: 2.25rem;
+    margin-top: unset;
+  }
+}
+
+h2 {
+  color: var(--clr-nutmeg);
+  font-size: 1.75rem;
+  font-weight: normal;
+  margin-block: 2rem 1.5rem;
+}
+
+/* --------------------------------------------- */
+/* LAYOUT                                        */
+/* --------------------------------------------- */
+main {
+  max-width: 46rem;
+  background-color: var(--clr-white);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+
+  img {
+    border-radius: 0.75rem;
+  }
+
+  @media (width < 37.5rem) {
+    padding: unset;
+
+    .content {
+      padding: 2.5rem 2rem;
+    }
+
+    img {
+      border-radius: unset;
+    }
+  }
+}
+
+dl {
+  margin-block: -0.5rem 0;
+
+  div {
+    display: flex;
+    padding-block: 0.75rem;
+
+    &:last-child {
+      padding-bottom: unset;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--clr-light-grey);
+    }
+  }
+
+  dt {
+    flex-basis: 50%;
+    margin-left: 2rem;
+  }
+
+  dd {
+    font-weight: bold;
+    color: var(--clr-nutmeg);
+    margin-left: unset;
+    flex-basis: 50%;
+  }
+}
+
+.prep-time {
+  background-color: var(--clr-rose-white);
+  padding: 1.75rem;
+  margin-block: 2rem;
+  border-radius: 0.75rem;
+
+  @media (width < 37.5rem) {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-family: var(--ff-sans);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--clr-dark-rasperry);
+    margin-block: 0 1rem;
+  }
+
+  ul {
+    --bullet-color: var(--clr-dark-rasperry);
+
+    margin: unset;
+  }
+}
