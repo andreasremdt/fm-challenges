@@ -23,7 +23,7 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 ## Built with
 
 - Semantic HTML5 markup
-- HTML schemas
+- [Schema.org](https://schema.org)
 - CSS nesting
 - Responsive design
 
