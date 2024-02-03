@@ -1,0 +1,208 @@
+/* --------------------------------------------- */
+/* WEBFONTS                                      */
+/* --------------------------------------------- */
+@font-face {
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Work Sans Bold"), local("WorkSans-Bold"), url(./fonts/work-sans-bold.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Work Sans Regular"), local("WorkSans-Regular"), url(./fonts/work-sans-regular.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: 600;
+  src: local("Work Sans SemiBold"), local("WorkSans-SemiBold"), url(./fonts/work-sans-semibold.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2212, U+2215;
+  font-display: swap;
+}
+
+/* --------------------------------------------- */
+/* VARIABLES                                     */
+/* --------------------------------------------- */
+:root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-pink: hsl(275, 100%, 97%);
+  --clr-pink: hsl(281, 83%, 54%);
+  --clr-grayish-purple: hsl(293, 16%, 49%);
+  --clr-dark-purple: hsl(292, 42%, 14%);
+
+  --ff-sans: Work Sans, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+/* --------------------------------------------- */
+/* RESET                                         */
+/* --------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark light;
+  hanging-punctuation: first last;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100svh;
+  margin: unset;
+  font: normal clamp(14px, 3vw, 16px) / 1.5 var(--ff-sans);
+  background: var(--clr-light-pink) url(./images/background-pattern-desktop.svg) no-repeat top left/100%;
+  color: var(--clr-grayish-purple);
+  padding: 1.5rem;
+  padding-top: 12vw;
+
+  @media (width < 31.25rem) {
+    padding-top: 30vw;
+    background-image: url(./images/background-pattern-mobile.svg);
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  line-height: 1;
+  color: var(--clr-dark-purple);
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+/* --------------------------------------------- */
+/* TYPOGRAPHY                                    */
+/* --------------------------------------------- */
+h1 {
+  --background-size: 2.5rem;
+
+  margin-block: 0 2rem;
+  font-size: 3.5em;
+  background: transparent
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" fill="none" viewBox="0 0 40 41"><path fill="%23AD28EB" d="M37.5 20.5a2.467 2.467 0 0 1-1.64 2.344l-9.913 3.604-3.603 9.911a2.5 2.5 0 0 1-4.688 0l-3.604-9.922-9.911-3.593a2.5 2.5 0 0 1 0-4.688l9.921-3.604 3.594-9.911a2.5 2.5 0 0 1 4.688 0l3.604 9.921 9.911 3.594A2.467 2.467 0 0 1 37.5 20.5Z"/></svg>')
+    no-repeat center left/var(--background-size);
+  padding-left: calc(var(--background-size) + 1.5rem);
+}
+
+/* --------------------------------------------- */
+/* LAYOUT                                        */
+/* --------------------------------------------- */
+main {
+  width: min(100%, 37.5rem);
+  margin-inline: auto;
+  background-color: var(--clr-white);
+  border-radius: clamp(0.5rem, 3vw, 1rem);
+  padding: clamp(1.5rem, 6vw, 2.5rem);
+  box-shadow: 0 2rem 3.5rem color-mix(in srgb, var(--clr-dark-purple), transparent 90%);
+}
+
+details {
+  --height: auto;
+
+  height: var(--height);
+  transition: height 0.25s ease-out;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--clr-light-pink);
+  }
+
+  > p {
+    margin-block: 0 1.5rem;
+  }
+
+  &[open] {
+    --rotation: 90deg;
+    --color: var(--clr-dark-purple);
+    --scale: 0;
+  }
+}
+
+summary {
+  color: var(--clr-dark-purple);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.125em;
+  list-style: none;
+  padding-block: 1.5rem;
+  transition: color 0.15s ease;
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+
+  span {
+    --size: 1.5rem;
+
+    margin-left: auto;
+    transition: rotate 0.2s ease-out, background-color 0.2s ease;
+    position: relative;
+    display: inline;
+    flex-shrink: 0;
+    width: var(--size);
+    aspect-ratio: 1;
+    border-radius: var(--size);
+    background-color: var(--color, var(--clr-pink));
+    rotate: var(--rotation, 0deg);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 2px;
+      border-radius: 2px;
+      background-color: var(--clr-white);
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+    }
+
+    &::before {
+      scale: var(--scale, 1);
+      transition: scale 0.2s ease-out;
+    }
+
+    &::after {
+      rotate: 90deg;
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--clr-pink);
+  }
+
+  &:focus-visible {
+    text-decoration: underline 2px;
+    outline: none;
+  }
+}

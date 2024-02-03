@@ -15,7 +15,8 @@
     "ecommerce-product-page",
     "newsletter-sign-up-with-success-message",
     "huddle-landing-page-with-curved-sections",
-    "age-calculator-app"
+    "age-calculator-app",
+    "faq-accordion"
   ],
   "repository": {
     "type": "git",
