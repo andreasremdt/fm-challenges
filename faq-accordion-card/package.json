@@ -5,6 +5,6 @@
     "dev": "sass ./scss/main.scss ./dist/styles.css --watch"
   },
   "devDependencies": {
-    "sass": "^1.69.5"
+    "sass": "^1.71.0"
   }
 }
